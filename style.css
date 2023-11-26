@@ -1,0 +1,185 @@
+:root {
+  /* FONTS  */
+  --mtv-font-family: "Marcellus", serif;
+
+  /* COLORS */
+  --mtv-color-primary: #0f917c;
+  --mtv-color-secondary: #117466;
+  --mtv-color-tertiary: #f0fdf9;
+
+
+  /* BACKGROUND COLOR */
+  --mtv-bg-HeaderFooter: #cdfaee;
+  --mtv-bg-primary: #f0fdf9;
+  --mtv-bg-secondary: #117466;
+  --mtv-bg-button-default: #17b599;
+  --mtv-bg-button-hover: #0f917c;
+
+  /* TEXT COLORS */
+  --mtv-txtColor-primary: #052e2a;
+  --mtv-txtColor-secondary: #144d45;
+  --mtv-txtColor-hl: #125d53;
+  --mtv-txtColor-title: #117466;
+  --mtv-txtColor-ahover: #17b599;
+  --mtv-txtColor-button: #f0fdf9;
+
+  /* FONT SIZES  */
+  --mtv-fontsize-h1: 2em;
+  --mtv-fontsize-h2: 1.8em;
+  --mtv-fontsize-h3: 1.6m;
+  --mtv-fontsize-h4: 1.3em;
+  --mtv-fontsize-h5: 1em;
+  --mtv-fontsize-text: 0.8em;
+  --mtv-fontsize-text2: 0.6em;
+  --mtv-fontsize-link: 0.6em;
+
+  /* SPACING */
+  --mtv-gap-ss: 5px;
+  --mtv-gap-s: 10px;
+  --mtv-gap-m: 25px;
+  --mtv-gap-l: 50px;
+
+  --mtv-padding-ss: 5px;
+  --mtv-padding-s: 10px;
+  --mtv-padding-m: 25px;
+  --mtv-padding-l: 50px;
+  --mtv-padding-xl: 80px;
+  --mtv-padsect-s: 5%;
+  --mtv-padsect-m: 10%;
+
+  --mtv-margin-ss: 5px;
+  --mtv-margin-s: 10px;
+  --mtv-margin-m: 25px;
+  --mtv-margin-l: 50px;
+  --mtv-margin-xl: 80px;
+
+  /* BORDERS */
+  --mtv-bradius: 30px;
+
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  position: relative;
+}
+
+body {
+  background-color: var(--mtv-bg-primary);
+  font-family: var(--mtv-font-family);
+  color: var(--mtv-txtColor-primary);
+}
+
+header {
+  width: 100%;
+  height: 15svh;
+}
+
+main {
+  width: 100%;
+  /* height: 75svh; */
+  min-height: 75svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer{
+  width: 100%;
+  height: 10svh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--mtv-txtColor-ahover);
+  text-decoration: underline var(--mtv-color-primary);
+}
+
+h1 {
+  color: var(--mtv-txtColor-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  color: var(--mtv-txtColor-primary);
+}
+
+h1 {
+  font-size: var(--mtv-fontsize-h1);
+}
+
+h2 {
+  font-size: var(--mtv-fontsize-h2);
+}
+
+h3 {
+  font-size: var(--mtv-fontsize-h3);
+}
+
+h4 {
+  font-size: var(--mtv-fontsize-h4);
+}
+
+h5 {
+  font-size: var(--mtv-fontsize-h5);
+}
+
+p {
+  font-size: var(-mtv-fontsize-text);
+  font-family: var(--mtv-font-family);
+}
+
+.maraisaName {
+  font-weight: 900;
+  font-family: var(--mtv-font-primary);
+  background: linear-gradient(to bottom, yellow, blue, red);
+  -webkit-background-clip: text;
+  background-clip: none;
+  -webkit-text-fill-color: transparent; 
+}
+
+button {
+  background-color: var(--mtv-bg-button-default);
+  border-radius: var(--mtv-bradius);
+  padding: var(--mtv-padding-s) var(--mtv-padding-m);
+  color: var(--mtv-txtColor-button);
+  font-size: var(--mtv-fontsize-text);
+  font-family: var(--mtv-font-family);
+  font-weight: 600;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--mtv-bg-button-hover);
+}
+
+.app {
+  width: 100%;
+}
+
+
