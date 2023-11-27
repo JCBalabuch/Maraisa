@@ -99,3 +99,9 @@ export const Copyright = () => {
   copyrightContent.appendChild(videoModalCR);
   copyrightContent.appendChild(imagesCR);
 };
+
+export const openModalCR = () => {
+  const modalCR = document.querySelector("#copyright");
+  console.log("desde copyright")
+  modalCR.style.display = "block";
+}

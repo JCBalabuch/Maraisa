@@ -1,6 +1,39 @@
 import { about1, about2, about3, maraisa } from "../../Data/Data";
-import  { openModalMaraisa } from "../../components/Maraisa/Maraisa";
+import { openModalCR } from "../../components/Copyright/Copyright";
+import { openModalMaraisa } from "../../components/Maraisa/Maraisa";
 import "./About.css";
+
+
+// const About = () => {
+
+//   // const btnModalMaraisa = document.getElementById("openModalMaraisa");
+//   // btnModalMaraisa.addEventListener("click", () => openModalMaraisa());
+//   // console.log("desde botón maraisa");
+
+//   // const btnModalCopyright = document.getElementById("openModalCR");
+//   // btnModalCopyright.addEventListener("click", () => openModalCR());
+//   // console.log("desde botón maraisa");
+
+
+//   return `
+//     <div class="about">
+//       <div class="aboutImg">
+//         <img src="../../public/products/Monagas - Cestería.jpg" alt="Totumas de Anzoategui"/>
+//       </div>
+//       <h4>${about1}</h4>
+//       <h5>${about2}</h5>
+//       <h5>${about3}</h5>
+//       <div class="divBtns">
+//         <button id="openModalMaraisa" class="openModal">Significado de Maraisa</button>
+//         <button id="openModalCR" class="openModal">Derechos de Autor</button>
+//       </div>
+//     </div>
+//   `;
+// };
+
+
+
+
 
 const About = () => {
   const aboutDiv = document.createElement("div");
@@ -10,8 +43,8 @@ const About = () => {
   aboutImg.classList.add("aboutImg");
 
   const img = document.createElement("img");
-  img.src = "../../public/products/Monagas - Cestería.jpg";
-  img.alt = "Totumas de Anzoategui";
+  img.src = "../../public/products/Delta - Cestería.jpg";
+  img.alt = "Cestería Indígena Warao";
 
   aboutImg.appendChild(img);
 
@@ -33,7 +66,7 @@ const About = () => {
   btnModalMaraisa.textContent = "Significado de Maraisa";
   btnModalMaraisa.addEventListener("click", () => {
     openModalMaraisa();
-    console.log("botón maraisa")
+    console.log("botón maraisa");
   });
 
   const btnModalCopyRight = document.createElement("button");
@@ -41,7 +74,7 @@ const About = () => {
   btnModalCopyRight.classList = "openModal";
   btnModalCopyRight.textContent = "Derechos de Autor";
   btnModalCopyRight.addEventListener("click", () => {
-    console.log("botón Copyright")
+    console.log("botón Copyright");
   });
 
   divBtns.appendChild(btnModalMaraisa);
@@ -56,7 +89,7 @@ const About = () => {
   return aboutDiv;
 };
 
-// const about = document.querySelector("main");
-// about.appendChild(About());
+const about = document.querySelector("main");
+about.appendChild(About());
 
-export default About;
+export default about;

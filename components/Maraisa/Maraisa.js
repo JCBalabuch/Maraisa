@@ -8,7 +8,7 @@ export const Maraisa = () => {
   maraisa.id = "maraisa";
   maraisa.classList.add("maraisa");
   main.appendChild(maraisa);
-    // document.body.appendChild(maraisa);
+    document.body.appendChild(maraisa);
 
   const maraisaContent = document.createElement("div");
   maraisaContent.classList.add("maraisa-content");
@@ -26,7 +26,7 @@ export const Maraisa = () => {
 
   const video = document.createElement("video");
   video.id = "video";
-  video.src = "/Videos/Maraisa.mp4";
+  video.src = "https://www.facebook.com/FranceschiChocolate/videos/elaboradas-por-ind%C3%ADgenas-de-la-etnia-warao-originarios-del-delta-del-orinoco-en-/4411087872241765/";
   video.autoplay = false;
   video.controls = true;
   maraisaContent.appendChild(video);

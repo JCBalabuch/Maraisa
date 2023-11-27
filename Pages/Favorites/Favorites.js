@@ -6,7 +6,7 @@ const Favorites = () => {
  `
 }
 
-const favorites = document.querySelector("main");
-favorites.appendChild(Favorites());
+// const favorites = document.querySelector("main");
+// favorites.appendChild(Favorites());
 
 export default Favorites;

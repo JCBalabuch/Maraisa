@@ -6,7 +6,7 @@ const Shopping = () => {
     `
    }
    
-   const shopping = document.querySelector("main");
-   shopping.appendChild(Shopping());
+//    const shopping = document.querySelector("main");
+//    shopping.appendChild(Shopping());
    
    export default Shopping;
