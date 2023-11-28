@@ -8,7 +8,7 @@ const Header = () => {
   headerLogo.classList = "headerLogo";
 
   const headerLogoImg = document.createElement("img");
-  headerLogoImg.src = "../../public/Logos/LogoMaraisa.png";
+  headerLogoImg.src = "/Logos/LogoMaraisa.png";
   headerLogoImg.alt = "Logo Maraisa";
 
   headerLogo.appendChild(headerLogoImg);
@@ -39,7 +39,7 @@ const Header = () => {
   const aShopping = document.createElement("a");
   aShopping.href = "/shopping";
   const shoppingImg = document.createElement("img");
-  shoppingImg.src = "../../public/Logos/AñadirCesta.png";
+  shoppingImg.src = "/Logos/AñadirCesta.png";
   shoppingImg.alt = "Cesta de Compras";
   aShopping.appendChild(shoppingImg);
   liShopping.appendChild(aShopping);
@@ -48,7 +48,7 @@ const Header = () => {
   const aFavorites = document.createElement("a");
   aFavorites.href = "/favorites";
   const favoritesImg = document.createElement("img");
-  favoritesImg.src = "../../public/Logos/CorazonLleno.png";
+  favoritesImg.src = "/Logos/CorazonLleno.png";
   favoritesImg.alt = "Favoritos";
   aFavorites.appendChild(favoritesImg);
   liFavorites.appendChild(aFavorites);

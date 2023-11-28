@@ -4,7 +4,7 @@ export const PRODUCTS = [
     name: "Collar indígena",
     category: "Bisutería",
     state: "Amazonas",
-    image: "../public/products/Amazonas - Bisutería.jpg",
+    image: "/products/Amazonas - Bisutería.jpg",
     price: 5,
   },
   {
@@ -12,7 +12,7 @@ export const PRODUCTS = [
     name: "Un corazón para dos",
     category: "Alfarería",
     state: "Amazonas",
-    image: "../public/products/Amazonas - Loza.jpg",
+    image: "/products/Amazonas - Loza.jpg",
     price: 15,
   },
   {
@@ -20,7 +20,7 @@ export const PRODUCTS = [
     name: "Gallinita",
     category: "Cestería",
     state: "Anzoátegui",
-    image: "../public/products/Anzoátegui - Cestería.jpg",
+    image: "/products/Anzoátegui - Cestería.jpg",
     price: 8,
   },
   {
@@ -28,7 +28,7 @@ export const PRODUCTS = [
     name: "Maracas",
     category: "Instrumentos",
     state: "Anzoátegui",
-    image: "../public/products/Anzoátegui - InstMusicales.jpg",
+    image: "/products/Anzoátegui - InstMusicales.jpg",
     price: 20,
   },
   {
@@ -36,7 +36,7 @@ export const PRODUCTS = [
     name: "Totuma",
     category: "Totumas",
     state: "Anzoátegui",
-    image: "../public/products/Anzoátegui - Totumas.jpg",
+    image: "/products/Anzoátegui - Totumas.jpg",
     price: 17,
   },
   {
@@ -44,7 +44,7 @@ export const PRODUCTS = [
     name: "Alpargatas de cuero",
     category: "Alpargatas",
     state: "Apure",
-    image: "../public/products/Apure - Alpargatas.jpg",
+    image: "/products/Apure - Alpargatas.jpg",
     price: 50,
   },
   {
@@ -52,7 +52,7 @@ export const PRODUCTS = [
     name: "Copa Totuma",
     category: "Totumas",
     state: "Apure",
-    image: "../public/products/Apure - Totumas.jpg",
+    image: "/products/Apure - Totumas.jpg",
     price: 5,
   },
   {
@@ -60,7 +60,7 @@ export const PRODUCTS = [
     name: "Cantimplora de mesa",
     category: "Alfarería",
     state: "Aragua",
-    image: "../public/products/Aragua - Loza.jpg",
+    image: "/products/Aragua - Loza.jpg",
     price: 25,
   },
   {
@@ -68,7 +68,7 @@ export const PRODUCTS = [
     name: "Alpargatas de cuero",
     category: "Alpargatas",
     state: "Barinas",
-    image: "../public/products/Barinas - Alpargatas.jpg",
+    image: "/products/Barinas - Alpargatas.jpg",
     price: 65,
   },
   {
@@ -76,7 +76,7 @@ export const PRODUCTS = [
     name: "Fuente de pasapalos",
     category: "Totumas",
     state: "Barinas",
-    image: "../public/products/Barinas - Totumas 2.jpg",
+    image: "/products/Barinas - Totumas 2.jpg",
     price: 28,
   },
   {
@@ -84,7 +84,7 @@ export const PRODUCTS = [
     name: "Colgante de oro",
     category: "Bisutería",
     state: "Bolívar",
-    image: "../public/products/Bolivar - Bisutería.jpg",
+    image: "/products/Bolivar - Bisutería.jpg",
     price: 150,
   },
   {
@@ -92,7 +92,7 @@ export const PRODUCTS = [
     name: "Collar indígena",
     category: "Bisutería",
     state: "Bolívar",
-    image: "../public/products/Bolivar - Bisutería3.jpg",
+    image: "/products/Bolivar - Bisutería3.jpg",
     price: 7,
   },
   {
@@ -100,7 +100,7 @@ export const PRODUCTS = [
     name: "Bumbac",
     category: "Instrumentos",
     state: "Bolívar",
-    image: "../public/products/Bolivar - InstMusicales2.jpg",
+    image: "/products/Bolivar - InstMusicales2.jpg",
     price: 80,
   },
   {
@@ -108,7 +108,7 @@ export const PRODUCTS = [
     name: "Cántaro",
     category: "Alfarería",
     state: "Carabobo",
-    image: "../public/products/Carabobo - Alfarería.jpg",
+    image: "/products/Carabobo - Alfarería.jpg",
     price: 35,
   },
   {
@@ -116,7 +116,7 @@ export const PRODUCTS = [
     name: "Alpargatas de piel",
     category: "Alpargatas",
     state: "Carabobo",
-    image: "../public/products/Carabobo - Alpargatas.jpg",
+    image: "/products/Carabobo - Alpargatas.jpg",
     price: 78,
   },
   {
@@ -124,7 +124,7 @@ export const PRODUCTS = [
     name: "Colgante",
     category: "Bisutería",
     state: "Caracas",
-    image: "../public/products/Caracas - Bisutería2.jpg",
+    image: "/products/Caracas - Bisutería2.jpg",
     price: 30,
   },
   {
@@ -132,7 +132,7 @@ export const PRODUCTS = [
     name: "Charrasca",
     category: "Instrumentos",
     state: "Caracas",
-    image: "../public/products/Caracas - InstrMisicales2.jpg",
+    image: "/products/Caracas - InstrMisicales2.jpg",
     price: 40,
   },
   {
@@ -140,7 +140,7 @@ export const PRODUCTS = [
     name: "Juego de Té",
     category: "Totumas",
     state: "Caracas",
-    image: "../public/products/Caracas - Totumas.jpg",
+    image: "/products/Caracas - Totumas.jpg",
     price: 100,
   },
   {
@@ -148,7 +148,7 @@ export const PRODUCTS = [
     name: "Materos",
     category: "Alfarería",
     state: "Cojedes",
-    image: "../public/products/Cojedes - Alfaería.jpg",
+    image: "/products/Cojedes - Alfaería.jpg",
     price: 30,
   },
   {
@@ -156,7 +156,7 @@ export const PRODUCTS = [
     name: "Cesta indígena",
     category: "Cestería",
     state: "Delta",
-    image: "../public/products/Delta - Cestería.jpg",
+    image: "/products/Delta - Cestería.jpg",
     price: 25,
   },
   {
@@ -164,7 +164,7 @@ export const PRODUCTS = [
     name: "Cesta indígena",
     category: "Cestería",
     state: "Delta",
-    image: "../public/products/Delta - Cestería2.jpg",
+    image: "/products/Delta - Cestería2.jpg",
     price: 35,
   },
   {
@@ -172,7 +172,7 @@ export const PRODUCTS = [
     name: "Gorra",
     category: "Cuero",
     state: "Falcón",
-    image: "../public/products/Falcón - Cuero.jpg",
+    image: "/products/Falcón - Cuero.jpg",
     price: 35,
   },
   {
@@ -180,7 +180,7 @@ export const PRODUCTS = [
     name: "Juego de porrones",
     category: "Alfarería",
     state: "Falcón",
-    image: "../public/products/Falcón - Loza.jpg",
+    image: "/products/Falcón - Loza.jpg",
     price: 60,
   },
   {
@@ -188,7 +188,7 @@ export const PRODUCTS = [
     name: "Violín",
     category: "Instrumentos",
     state: "Guarico",
-    image: "../public/products/Guarico - InstrMusicales2.jpg",
+    image: "/products/Guarico - InstrMusicales2.jpg",
     price: 350,
   },
   {
@@ -196,7 +196,7 @@ export const PRODUCTS = [
     name: "Arpa",
     category: "Instrumentos",
     state: "Guarico",
-    image: "../public/products/Guarico - InstrMusicales4.jpg",
+    image: "/products/Guarico - InstrMusicales4.jpg",
     price: 500,
   },
   {
@@ -204,7 +204,7 @@ export const PRODUCTS = [
     name: "Chinchorros",
     category: "Chinchorros",
     state: "Lara",
-    image: "../public/products/Lara - Chinchorros.jpg",
+    image: "/products/Lara - Chinchorros.jpg",
     price: 120,
   },
   {
@@ -212,7 +212,7 @@ export const PRODUCTS = [
     name: "Ensaladera",
     category: "Alfarería",
     state: "Lara",
-    image: "../public/products/Lara - Loza.jpg",
+    image: "/products/Lara - Loza.jpg",
     price: 65,
   },
   {
@@ -220,7 +220,7 @@ export const PRODUCTS = [
     name: "Collar de conchas marinas",
     category: "Bisutería",
     state: "Los Roques",
-    image: "../public/products/LosRoques - Bisutería 1.jpg",
+    image: "/products/LosRoques - Bisutería 1.jpg",
     price: 10,
   },
   {
@@ -228,7 +228,7 @@ export const PRODUCTS = [
     name: "Pulsera de coral negro",
     category: "Bisutería",
     state: "Los Roques",
-    image: "../public/products/LosRoques - Bisutería 2.jpg",
+    image: "/products/LosRoques - Bisutería 2.jpg",
     price: 35,
   },
   {
@@ -236,7 +236,7 @@ export const PRODUCTS = [
     name: "Juego de collar y pulsera",
     category: "Bisutería",
     state: "Mérida",
-    image: "../public/products/Mérida - Bisutería.jpg",
+    image: "/products/Mérida - Bisutería.jpg",
     price: 30,
   },
   {
@@ -244,7 +244,7 @@ export const PRODUCTS = [
     name: "Silla colgante",
     category: "Chinchorros",
     state: "Mérida",
-    image: "../public/products/Mérida - Chinchorros.jpg",
+    image: "/products/Mérida - Chinchorros.jpg",
     price: 75,
   },
   {
@@ -252,7 +252,7 @@ export const PRODUCTS = [
     name: "Lámpara de madera y papel",
     category: "Lámparas",
     state: "Mérida",
-    image: "../public/products/Mérida - Lámparas2.jpg",
+    image: "/products/Mérida - Lámparas2.jpg",
     price: 35,
   },
   {
@@ -260,7 +260,7 @@ export const PRODUCTS = [
     name: "Juego de tazas",
     category: "Alfarería",
     state: "Mérida",
-    image: "../public/products/Mérida - Loza.jpg",
+    image: "/products/Mérida - Loza.jpg",
     price: 80,
   },
   {
@@ -268,7 +268,7 @@ export const PRODUCTS = [
     name: "Tambor",
     category: "Instrumentos",
     state: "Miranda",
-    image: "../public/products/Miranda - Tambor.jpg",
+    image: "/products/Miranda - Tambor.jpg",
     price: 200,
   },
   {
@@ -276,7 +276,7 @@ export const PRODUCTS = [
     name: "Chinchorros",
     category: "Chinchorros",
     state: "Monagas",
-    image: "../public/products/Monagas - Chinchorros2.jpg",
+    image: "/products/Monagas - Chinchorros2.jpg",
     price: 100,
   },
   {
@@ -284,7 +284,7 @@ export const PRODUCTS = [
     name: "Bolso de playa",
     category: "Cestería",
     state: "Nueva Esparta",
-    image: "../public/products/NuevaEsparta - Cestería.jpg",
+    image: "/products/NuevaEsparta - Cestería.jpg",
     price: 30,
   },
   {
@@ -292,7 +292,7 @@ export const PRODUCTS = [
     name: "Chinchorro",
     category: "Chinchorros",
     state: "Nueva Esparta",
-    image: "../public/products/NuevaEsparta - Chinchorros.jpg",
+    image: "/products/NuevaEsparta - Chinchorros.jpg",
     price: 120,
   },
   {
@@ -300,7 +300,7 @@ export const PRODUCTS = [
     name: "Cartera de cuero",
     category: "Cuero",
     state: "Portuguesa",
-    image: "../public/products/Portuguesa - Cuero.jpg",
+    image: "/products/Portuguesa - Cuero.jpg",
     price: 70,
   },
   {
@@ -308,7 +308,7 @@ export const PRODUCTS = [
     name: "Juego de totumas",
     category: "Totumas",
     state: "Portuguesa",
-    image: "../public/products/Portuguesa - Totumas.jpg",
+    image: "/products/Portuguesa - Totumas.jpg",
     price: 15,
   },
   {
@@ -316,7 +316,7 @@ export const PRODUCTS = [
     name: "Cesta",
     category: "Cestería",
     state: "Sucre",
-    image: "../public/products/Sucre - Cestería.jpg",
+    image: "/products/Sucre - Cestería.jpg",
     price: 20,
   },
   {
@@ -324,7 +324,7 @@ export const PRODUCTS = [
     name: "Tambor",
     category: "Instrumentos",
     state: "Sucre",
-    image: "../public/products/Sucre - InstrMusicales.jpg",
+    image: "/products/Sucre - InstrMusicales.jpg",
     price: 100,
   },
   {
@@ -332,7 +332,7 @@ export const PRODUCTS = [
     name: "Juego de Carteras",
     category: "Cestería",
     state: "Táchira",
-    image: "../public/products/Táchira - cestería.jpg",
+    image: "/products/Táchira - cestería.jpg",
     price: 50,
   },
   {
@@ -340,7 +340,7 @@ export const PRODUCTS = [
     name: "Botas de cuero",
     category: "Cuero",
     state: "Táchira",
-    image: "../public/products/Táchira - Cuero.jpg",
+    image: "/products/Táchira - Cuero.jpg",
     price: 100,
   },
   {
@@ -348,7 +348,7 @@ export const PRODUCTS = [
     name: "Hornilla y Olla",
     category: "Alfarería",
     state: "Trujillo",
-    image: "../public/products/Trujillo -Loza.jpg",
+    image: "/products/Trujillo -Loza.jpg",
     price: 75,
   },
   {
@@ -356,7 +356,7 @@ export const PRODUCTS = [
     name: "Cesta",
     category: "Cestería",
     state: "Yaracuy",
-    image: "../public/products/Yaracuy - Cestería.jpg",
+    image: "/products/Yaracuy - Cestería.jpg",
     price: 25,
   },
   {
@@ -364,7 +364,7 @@ export const PRODUCTS = [
     name: "Cantimplora",
     category: "Totumas",
     state: "Yaracuy",
-    image: "../public/products/Yaracuy - Totumas.jpg",
+    image: "/products/Yaracuy - Totumas.jpg",
     price: 25,
   },
   {
@@ -372,7 +372,7 @@ export const PRODUCTS = [
     name: "Alpargatas Polar",
     category: "Alpargatas",
     state: "Zulia",
-    image: "../public/products/Zulia - Alpargatas.jpg",
+    image: "/products/Zulia - Alpargatas.jpg",
     price: 30,
   },
   {
@@ -380,7 +380,7 @@ export const PRODUCTS = [
     name: "Collar",
     category: "Bisutería",
     state: "Zulia",
-    image: "../public/products/Zulia - Bisutería2.jpg",
+    image: "/products/Zulia - Bisutería2.jpg",
     price: 20,
   }
 ];

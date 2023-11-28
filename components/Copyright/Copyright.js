@@ -36,7 +36,7 @@ export const Copyright = () => {
   videoHomeCR.classList = "sections";
 
   const videoHomeImg = document.createElement("img");
-  videoHomeImg.src = "../../public/Videos/SaltoAngel.jpg";
+  videoHomeImg.src = "/Videos/SaltoAngel.jpg";
   videoHomeImg.alt = "Salto Ángel";
   videoHomeCR.appendChild(videoHomeImg);
 
@@ -57,7 +57,7 @@ export const Copyright = () => {
   videoModalCR.classList = "sections";
 
   const videoModalImg = document.createElement("img");
-  videoModalImg.src = "../../public/Videos/IndigenaTejiendo.png";
+  videoModalImg.src = "/Videos/IndigenaTejiendo.png";
   videoModalImg.alt = "Indígena Warao Tejiendo";
   videoModalCR.appendChild(videoModalImg);
 
@@ -78,7 +78,7 @@ export const Copyright = () => {
   imagesCR.classList = "sections";
 
   const imagesImg = document.createElement("img");
-  imagesImg.src = "../../public/Videos/ArtesanosDeVenezuela.png";
+  imagesImg.src = "/Videos/ArtesanosDeVenezuela.png";
   imagesImg.alt = "Parte de la Portada del Libro Artesanos de Venezuela";
   imagesCR.appendChild(imagesImg);
 

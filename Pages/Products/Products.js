@@ -1,15 +1,13 @@
+import { gallery } from "../../components/Gallery/Gallery";
 import "./Products.css";
 
 const Products = () => {
   return `
-    <div id="products" class="products">
+    <section id="products" class="products">
         <div id="productsFilter" class="productsFilter"></div>
-        <div id="productsGallery" class="productsGallery"></div>
-    </div>
+        <div id="productsGallery" class="productsGallery">${gallery()}</div>
+    </section>
  `;
 };
-
-// const products = document.querySelector("main");
-// products.appendChild(Products());
 
 export default Products;

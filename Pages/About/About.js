@@ -43,7 +43,7 @@ const About = () => {
   aboutImg.classList.add("aboutImg");
 
   const img = document.createElement("img");
-  img.src = "../../public/products/Delta - Cestería.jpg";
+  img.src = "/products/Delta - Cestería.jpg";
   img.alt = "Cestería Indígena Warao";
 
   aboutImg.appendChild(img);
