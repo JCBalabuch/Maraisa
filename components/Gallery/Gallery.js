@@ -1,7 +1,7 @@
 import { PRODUCTS } from "../../Data/Data";
 import "./Gallery.css"
 
-const galleryTemplate = (products) => {
+export const galleryTemplate = (products) => {
     
     const productsGallery = document.createElement("div");
     productsGallery.id = "productsGallery";

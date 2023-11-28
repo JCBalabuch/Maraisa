@@ -173,6 +173,7 @@ button {
   font-family: var(--mtv-font-family);
   font-weight: 600;
   border: none;
+  cursor: pointer;
 }
 
 button:hover {
