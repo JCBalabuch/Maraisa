@@ -1,0 +1,21 @@
+.filters {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--mtv-gap-m);
+}
+
+input, 
+select {
+    width: 180px;
+    padding: var(--mtv-padding-s) var(--mtv-padding-ss);
+    border-radius: var(--mtv-bradius);
+    border: 1px solid var(--mtv-color-primary);
+}
+
+input::placeholder,
+input,
+select {
+    color: var(--mtv-color-primary)
+}

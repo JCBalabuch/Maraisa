@@ -7,7 +7,6 @@
   --mtv-color-secondary: #117466;
   --mtv-color-tertiary: #f0fdf9;
 
-
   /* BACKGROUND COLOR */
   --mtv-bg-HeaderFooter: #cdfaee;
   --mtv-bg-primary: #f0fdf9;
@@ -26,8 +25,8 @@
 
   /* FONT SIZES  */
   --mtv-fontsize-h1: 2em;
-  --mtv-fontsize-h2: 1.8em;
-  --mtv-fontsize-h3: 1.6m;
+  --mtv-fontsize-h2: 1.7em;
+  --mtv-fontsize-h3: 1.5em;
   --mtv-fontsize-h4: 1.3em;
   --mtv-fontsize-h5: 1em;
   --mtv-fontsize-text: 0.8em;

@@ -1,57 +1,108 @@
+import "./Filters.css";
 import { PRODUCTS } from "../../Data/Data";
 import { galleryTemplate } from "../Gallery/Gallery";
-import "./Filters.css";
 
-export const filtersTemplate = () => {
-  const filtersContainer = document.getElementById("productsFilter");
+// export const filtersTemplate = () => {
+//     const filtersContainer = document.createElement("div");
+//     filtersContainer.id = "productsFilter";
+
+//     filtersContainer.append(createNameFilter());
+//     filtersContainer.append(createCategoryFilter());
+//     filtersContainer.append(createStateFilter());
+//     filtersContainer.append(createPriceFilter());
+//     filtersContainer.append(createClearFiltersButton());
+
+//     return filtersContainer;
+//   };
+
+//   export const filters = () => {
+//     return `
+//       <div id="filters" class="filters">
+//         ${filtersTemplate().innerHTML}
+//       </div>
+//     `;
+//   };
+
+const createNameFilter = () => {
   const nameFilterInput = document.createElement("input");
   nameFilterInput.type = "text";
   nameFilterInput.id = "nameFilter";
   nameFilterInput.placeholder = "Buscar por nombre";
-  filtersContainer.appendChild(nameFilterInput);
 
+  return nameFilterInput;
+};
+
+const createCategoryFilter = () => {
   const categoryFilterSelect = document.createElement("select");
   categoryFilterSelect.id = "categoryFilter";
-  filtersContainer.appendChild(categoryFilterSelect);
+
   const categoryFilterOption = document.createElement("option");
+  categoryFilterOption.id = "categoryOptions";
   categoryFilterOption.value = "";
   categoryFilterOption.textContent = "Todas las categorías";
+
   categoryFilterSelect.appendChild(categoryFilterOption);
 
-  const stateFilterSelect = document.createElement("select");
-  stateFilterSelect.id = "stateFilter";
-  filtersContainer.appendChild(stateFilterSelect);
-  const stateFilterOption = document.createElement("option");
-  stateFilterOption.value = "";
-  stateFilterOption.textContent = "Todos los estados";
-  stateFilterSelect.appendChild(stateFilterOption);
+  fillCategories(categoryFilterSelect);
 
+  categoryFilterSelect.addEventListener("change", () => {
+    console.log(categoryFilterSelect.value);
+  });
+  console.log(categoryFilterSelect.value);
+
+  return categoryFilterSelect;
+};
+
+const createPriceFilter = () => {
   const priceFilterInput = document.createElement("input");
   priceFilterInput.type = "number";
   priceFilterInput.id = "priceFilter";
-  priceFilterInput.placeholder = "Precio máximo";
-  filtersContainer.appendChild(priceFilterInput);
+  priceFilterInput.placeholder = "Precio máximo $";
 
+  return priceFilterInput;
+};
+
+const createStateFilter = () => {
+  const stateFilterSelect = document.createElement("select");
+  stateFilterSelect.id = "stateFilter";
+
+  const stateFilterOption = document.createElement("option");
+  stateFilterOption.value = "";
+  stateFilterOption.textContent = "Todos los estados";
+
+  stateFilterSelect.appendChild(stateFilterOption);
+
+  fillStateSelect(stateFilterSelect);
+
+  return stateFilterSelect;
+};
+
+const createClearFiltersButton = () => {
   const clearFiltersButton = document.createElement("button");
   clearFiltersButton.id = "clearFilters";
   clearFiltersButton.textContent = "Limpiar filtros";
-  filtersContainer.appendChild(clearFiltersButton);
+  // clearFiltersButton.addEventListener("Click", clearFilters);
+  // clearFiltersButton.addEventListener("click", () => {console.log("El botón de limpiar filtros ha sido clicado")});
+  // console.log(clearFiltersButton)
 
-  return filtersContainer;
+  return clearFiltersButton;
 };
-
-export const filters = () => {
-    return `
-        <div id="filters" class="filters">
-          ${filtersTemplate().outerHTML}
-        </div>
-          `;
-  };
-
 
 const getUniqueCategories = () => {
   const categories = PRODUCTS.map((product) => product.category);
   return [...new Set(categories)];
+};
+
+const fillCategories = (categorySelect) => {
+  const uniqueCategories = getUniqueCategories();
+
+  uniqueCategories.forEach((category) => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+
+    categorySelect.appendChild(option);
+  });
 };
 
 const getUniqueStates = () => {
@@ -59,26 +110,14 @@ const getUniqueStates = () => {
   return [...new Set(states)];
 };
 
-const fillCategories = () => {
-  const categorySelect = document.getElementById("categoryFilter");
-  const uniqueCategories = getUniqueCategories();
-
-  uniqueCategories.forEach((category) => {
-    const option = document.createElement("option");
-    option.value = category;
-    option.textContent = category;
-    categorySelect.appendChild(option);
-  });
-};
-
-const fillStateSelect = () => {
-  const stateSelect = document.getElementById("stateFilter");
+const fillStateSelect = (stateSelect) => {
   const uniqueStates = getUniqueStates();
 
   uniqueStates.forEach((state) => {
     const option = document.createElement("option");
     option.value = state;
     option.textContent = state;
+
     stateSelect.appendChild(option);
   });
 };
@@ -98,26 +137,46 @@ const filterProducts = () => {
   const stateFilter = document.getElementById("stateFilter").value;
   const priceFilter = document.getElementById("priceFilter").value;
 
-  const filteredProducts = products.filter(product => {
+  const filteredProducts = products.filter((product) => {
     return (
-        (product.name.toLocaleLowerCase().includes(nameFilter) || nameFilter === "") &&
-        (product.category === categoryFilter || categoryFilter === "") &&
-        (product.state === stateFilter || stateFilter === "") &&
-        (product.price <= priceFilter || priceFilter === "")
-    )
-  })
+      (product.name.toLocaleLowerCase().includes(nameFilter) ||
+        nameFilter === "") &&
+      (product.category === categoryFilter || categoryFilter === "") &&
+      (product.state === stateFilter || stateFilter === "") &&
+      (product.price <= priceFilter || priceFilter === "")
+    );
+  });
+
   galleryTemplate(filteredProducts);
 };
 
+// document.getElementById("nameFilter").addEventListener("input", filterProducts);
+// document.getElementById("categoryFilter").addEventListener("change", filterProducts);
+// document.getElementById("stateFilter").addEventListener("change", filterProducts);
+// document.getElementById("priceFilter").addEventListener("input", filterProducts);
+// document.getElementById("clearFilters").addEventListener("click", clearFilters);
 
-document.getElementById("nameFilter").addEventListener("input", filterProducts);
-document.getElementById("categoryFilter").addEventListener("change", filterProducts);
-document.getElementById("stateFilter").addEventListener("change", filterProducts);
-document.getElementById("priceFilter").addEventListener("input", filterProducts);
-document.getElementById("clearFilters").addEventListener("click", clearFilters);
 
-fillCategories();
-fillStateSelect();
-clearFilters();
+const filtersTemplate = () => {
+  const filtersContainer = document.createElement("div");
+  filtersContainer.id = "productsFilter";
+  filtersContainer.className = "productsFilter";
+
+  filtersContainer.append(createNameFilter());
+  filtersContainer.append(createCategoryFilter());
+  filtersContainer.append(createStateFilter());
+  filtersContainer.append(createPriceFilter());
+  filtersContainer.append(createClearFiltersButton());
+
+  return filtersContainer;
+};
+
+export const filters = () => {
+  return `
+      <div id="filters" class="filters">
+        ${filtersTemplate().innerHTML}
+      </div>
+    `;
+};
 
 

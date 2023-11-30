@@ -1,3 +1,4 @@
+// import { filters } from "../../components/Filters/Filters";
 import { filters } from "../../components/Filters/Filters";
 import { gallery } from "../../components/Gallery/Gallery";
 import "./Products.css";
