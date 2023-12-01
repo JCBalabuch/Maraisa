@@ -35,6 +35,18 @@ const Header = () => {
   aAbout.textContent = "About";
   liAbout.appendChild(aAbout);
 
+  const liMaraisa = document.createElement("li");
+  const aMaraisa = document.createElement("a");
+  aMaraisa.href = "/maraisa";
+  aMaraisa.textContent = "Maraisa";
+  liMaraisa.appendChild(aMaraisa);
+
+  const liCopyright = document.createElement("li");
+  const aCopyright = document.createElement("a");
+  aCopyright.href = "/copyright";
+  aCopyright.textContent = "Copyright";
+  liCopyright.appendChild(aCopyright);
+
   const liShopping = document.createElement("li");
   const aShopping = document.createElement("a");
   aShopping.href = "/shopping";
@@ -56,6 +68,8 @@ const Header = () => {
   ul.appendChild(liHome);
   ul.appendChild(liProducts);
   ul.appendChild(liAbout);
+  ul.appendChild(liMaraisa);
+  ul.appendChild(liCopyright);
   ul.appendChild(liShopping);
   ul.appendChild(liFavorites);
 
@@ -70,23 +84,3 @@ header.appendChild(Header());
 
 export default Header;
 
-// {
-//     path: "/",
-//     component: Home,
-//   },
-//   {
-//     path: "/products",
-//     component: Products,
-//   },
-//   {
-//     path: "/about",
-//     component: About,
-//   },
-//   {
-//     path: "/favorites",
-//     component: Favorites,
-//   },
-//   {
-//     path: "/shopping",
-//     component: Shopping,
-//   },

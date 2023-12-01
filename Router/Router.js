@@ -1,11 +1,12 @@
 import Home from "../Pages/Home/Home";
 import Products from "../Pages/Products/Products";
 import About from "../Pages/About/About";
+import { Maraisa } from "../Pages/Maraisa/Maraisa";
+import { Copyright } from "../Pages/Copyright/Copyright";
 import Favorites from "../Pages/Favorites/Favorites";
 import Shopping from "../Pages/Shopping/Shopping";
 import notFound from "../Pages/NotFound/NotFound";
-import { Copyright } from "../components/Copyright/Copyright";
-import { Maraisa } from "../components/Maraisa/Maraisa";
+// import { clearFilters, filterProducts } from "../components/Filters/Filters";
 
 const routes = [
   {
@@ -19,6 +20,14 @@ const routes = [
   {
     path: "/about",
     component: About,
+  },
+  {
+    path: "/maraisa",
+    component: Maraisa,
+  },
+  {
+    path: "/copyright",
+    component: Copyright,
   },
   {
     path: "/favorites",
@@ -37,10 +46,6 @@ export const router = () => {
 
   if (component) {
     document.querySelector("main").innerHTML = component();
-    if (path === "/about") {
-      document.querySelector("#maraisa").innerHTML = Maraisa()  
-      // document.querySelector("#copyright").innerHTML = Copyright();
-    }
   } else {
     document.querySelector("main").innerHTML = notFound();
   }
@@ -60,4 +65,20 @@ export const addListeners = () => {
       router();
     });
   });
+
+  // document
+  //   .getElementById("nameFilter")
+  //   .addEventListener("input", filterProducts);
+  // document
+  //   .getElementById("categoryFilter")
+  //   .addEventListener("change", filterProducts);
+  // document
+  //   .getElementById("stateFilter")
+  //   .addEventListener("change", filterProducts);
+  // document
+  //   .getElementById("priceFilter")
+  //   .addEventListener("input", filterProducts);
+  // document
+  //   .getElementById("clearFilters")
+  //   .addEventListener("click", clearFilters);
 };

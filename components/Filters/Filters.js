@@ -2,26 +2,26 @@ import "./Filters.css";
 import { PRODUCTS } from "../../Data/Data";
 import { galleryTemplate } from "../Gallery/Gallery";
 
-// export const filtersTemplate = () => {
-//     const filtersContainer = document.createElement("div");
-//     filtersContainer.id = "productsFilter";
+export const filtersTemplate = () => {
+  const filtersContainer = document.createElement("div");
+  filtersContainer.id = "productsFilter";
 
-//     filtersContainer.append(createNameFilter());
-//     filtersContainer.append(createCategoryFilter());
-//     filtersContainer.append(createStateFilter());
-//     filtersContainer.append(createPriceFilter());
-//     filtersContainer.append(createClearFiltersButton());
+  filtersContainer.append(createNameFilter());
+  filtersContainer.append(createCategoryFilter());
+  filtersContainer.append(createStateFilter());
+  filtersContainer.append(createPriceFilter());
+  filtersContainer.append(createClearFiltersButton());
 
-//     return filtersContainer;
-//   };
+  return filtersContainer;
+};
 
-//   export const filters = () => {
-//     return `
-//       <div id="filters" class="filters">
-//         ${filtersTemplate().innerHTML}
-//       </div>
-//     `;
-//   };
+export const filters = () => {
+  return `
+      <div id="filters" class="filters">
+        ${filtersTemplate().innerHTML}
+      </div>
+    `;
+};
 
 const createNameFilter = () => {
   const nameFilterInput = document.createElement("input");
@@ -122,7 +122,7 @@ const fillStateSelect = (stateSelect) => {
   });
 };
 
-const clearFilters = () => {
+export const clearFilters = () => {
   document.getElementById("nameFilter").value = "";
   document.getElementById("categoryFilter").value = "";
   document.getElementById("stateFilter").value = "";
@@ -130,12 +130,14 @@ const clearFilters = () => {
   filterProducts();
 };
 
-const filterProducts = () => {
+export const filterProducts = () => {
   const products = [...PRODUCTS];
   const nameFilter = document.getElementById("nameFilter").value.toLowerCase();
   const categoryFilter = document.getElementById("categoryFilter").value;
   const stateFilter = document.getElementById("stateFilter").value;
   const priceFilter = document.getElementById("priceFilter").value;
+
+  console.log(stateFilter)
 
   const filteredProducts = products.filter((product) => {
     return (
@@ -150,33 +152,26 @@ const filterProducts = () => {
   galleryTemplate(filteredProducts);
 };
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   document
+//     .getElementById("nameFilter")
+//     .addEventListener("input", filterProducts);
+//   document
+//     .getElementById("categoryFilter")
+//     .addEventListener("change", filterProducts);
+//   document
+//     .getElementById("stateFilter")
+//     .addEventListener("change", filterProducts);
+//   document
+//     .getElementById("priceFilter")
+//     .addEventListener("input", filterProducts);
+//   document
+//     .getElementById("clearFilters")
+//     .addEventListener("click", clearFilters);
+// });
+
 // document.getElementById("nameFilter").addEventListener("input", filterProducts);
 // document.getElementById("categoryFilter").addEventListener("change", filterProducts);
 // document.getElementById("stateFilter").addEventListener("change", filterProducts);
 // document.getElementById("priceFilter").addEventListener("input", filterProducts);
 // document.getElementById("clearFilters").addEventListener("click", clearFilters);
-
-
-const filtersTemplate = () => {
-  const filtersContainer = document.createElement("div");
-  filtersContainer.id = "productsFilter";
-  filtersContainer.className = "productsFilter";
-
-  filtersContainer.append(createNameFilter());
-  filtersContainer.append(createCategoryFilter());
-  filtersContainer.append(createStateFilter());
-  filtersContainer.append(createPriceFilter());
-  filtersContainer.append(createClearFiltersButton());
-
-  return filtersContainer;
-};
-
-export const filters = () => {
-  return `
-      <div id="filters" class="filters">
-        ${filtersTemplate().innerHTML}
-      </div>
-    `;
-};
-
-

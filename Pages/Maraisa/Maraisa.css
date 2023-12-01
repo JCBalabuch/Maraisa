@@ -1,0 +1,32 @@
+.maraisa {
+  width: 100%;
+  height: 70svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--mtv-padding-l);
+  gap: var(--mtv-gap-l);
+}
+
+.maraisa video {
+  height: 60%;
+  width: auto;
+  border-radius: var(--mtv-bradius);
+}
+
+.maraisa h5 {
+  text-align: justify;
+  width: 70%;
+}
+
+@media (250px <= width <= 450px) {
+  .maraisa video {
+    width: 100%;
+    border-radius: var(--mtv-bradius);
+  }
+
+  .maraisa h5 {
+    width: 100%;
+  }
+}
