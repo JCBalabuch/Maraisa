@@ -65,6 +65,15 @@ const Header = () => {
   aFavorites.appendChild(favoritesImg);
   liFavorites.appendChild(aFavorites);
 
+  const hambMenu = document.createElement("button");
+  hambMenu.id = "hambMenu";
+  hambMenu.classList = "hambMenu";
+
+  for (let i = 0; i < 3; i++) {
+    const span = document.createElement("span");
+    hambMenu.appendChild(span);
+  }
+
   ul.appendChild(liHome);
   ul.appendChild(liProducts);
   ul.appendChild(liAbout);
@@ -74,6 +83,7 @@ const Header = () => {
   ul.appendChild(liFavorites);
 
   nav.appendChild(ul);
+  nav.appendChild(hambMenu);
   header.appendChild(nav);
 
   return header;
@@ -83,4 +93,3 @@ const header = document.querySelector("header");
 header.appendChild(Header());
 
 export default Header;
-

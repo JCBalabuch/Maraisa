@@ -6,7 +6,7 @@ import { Copyright } from "../Pages/Copyright/Copyright";
 import Favorites from "../Pages/Favorites/Favorites";
 import Shopping from "../Pages/Shopping/Shopping";
 import notFound from "../Pages/NotFound/NotFound";
-// import { clearFilters, filterProducts } from "../components/Filters/Filters";
+import { clearFilters, filterProducts } from "../components/Filters/Filters";
 
 const routes = [
   {
@@ -53,7 +53,36 @@ export const router = () => {
 
 window.addEventListener("popstate", router);
 
-document.addEventListener("DOMContentLoaded", router);
+// document.addEventListener("DOMContentLoaded", router);
+
+window.addEventListener("DOMContentLoaded", () => {
+  router();
+  addListeners();
+
+  let images = document.querySelectorAll(".imgProduct");
+  console.log(images);
+  images.forEach((img) =>
+    img.addEventListener("click", (e) => {
+      console.log(`Card clicked: ${e.target.getAttribute("alt")}`);
+    })
+  );
+
+  document
+    .getElementById("nameFilter")
+    .addEventListener("input", filterProducts);
+  document
+    .getElementById("categoryFilter")
+    .addEventListener("change", filterProducts);
+  document
+    .getElementById("stateFilter")
+    .addEventListener("change", filterProducts);
+  document
+    .getElementById("priceFilter")
+    .addEventListener("input", filterProducts);
+  document
+    .getElementById("clearFilters")
+    .addEventListener("click", clearFilters);
+});
 
 export const addListeners = () => {
   const navLinks = document.querySelectorAll("nav a");

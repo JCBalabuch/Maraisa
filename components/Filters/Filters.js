@@ -131,13 +131,20 @@ export const clearFilters = () => {
 };
 
 export const filterProducts = () => {
-  const products = [...PRODUCTS];
+  let productsGallery = document.getElementById("productsGallery")
+  productsGallery = "";
+  
+  const products = [... PRODUCTS];
   const nameFilter = document.getElementById("nameFilter").value.toLowerCase();
   const categoryFilter = document.getElementById("categoryFilter").value;
   const stateFilter = document.getElementById("stateFilter").value;
   const priceFilter = document.getElementById("priceFilter").value;
 
+  console.log(nameFilter)
+  console.log(categoryFilter)
   console.log(stateFilter)
+  console.log(priceFilter)
+  console.log(products)
 
   const filteredProducts = products.filter((product) => {
     return (
@@ -148,6 +155,8 @@ export const filterProducts = () => {
       (product.price <= priceFilter || priceFilter === "")
     );
   });
+
+  console.log(filteredProducts)
 
   galleryTemplate(filteredProducts);
 };
