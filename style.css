@@ -158,6 +158,14 @@ p {
   font-family: var(--mtv-font-family);
 }
 
+img {
+  user-select: none;
+  -drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
 .maraisaName {
   font-weight: 900;
   font-family: var(--mtv-font-primary);
