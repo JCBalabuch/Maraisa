@@ -1,12 +1,15 @@
-import "./Favorites.css"
+import "./Favorites.css";
+
+//TODO - para hacer los favoritos
+//   const favoritesInStorage = localStorage.getItem("bbddFavorites");
 
 const Favorites = () => {
- return `
+  return `
  Hola desde Favorites
- `
-}
-
-// const favorites = document.querySelector("main");
-// favorites.appendChild(Favorites());
+ `;
+};
 
 export default Favorites;
+
+//TODO - para hacer los favoritos
+// const addToFavorite = () => {}

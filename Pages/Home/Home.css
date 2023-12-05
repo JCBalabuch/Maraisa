@@ -7,7 +7,7 @@
   background-color: var(--mtv-bg-primary);
 }
 
-.homePage video {
+.homePage iframe {
   position: absolute;
   top: 50%;
   left: 57%;
@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 3;
 }
 
 .overlayDiv img {

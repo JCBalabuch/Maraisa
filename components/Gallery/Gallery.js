@@ -12,6 +12,7 @@ export const galleryTemplate = (products) => {
 
     products.forEach(product => {
         const liProduct = document.createElement("li");
+        liProduct.id = product.id;
 
         const divCard = document.createElement("div");
         divCard.classList = "divCard";
@@ -51,6 +52,13 @@ export const galleryTemplate = (products) => {
         shoppingImg.src= "/Logos/AñadirCesta.png"
         shoppingImg.alt = "Añadir a Cesta";
 
+        const removeBtn = document.createElement("button");
+        removeBtn.id = "removeBtn";
+        removeBtn.classList = "removeBtn";
+        const removeImg = document.createElement("img");
+        removeImg.src= "/Logos/eliminar.png"
+        removeImg.alt = "Eliminar";
+
         divCard.appendChild(nameProduct);
         divCard.appendChild(divImgProduct);
         divImgProduct.appendChild(imgProduct);
@@ -59,8 +67,10 @@ export const galleryTemplate = (products) => {
         divCard.appendChild(divBtnsProduct);
         divBtnsProduct.appendChild(shoppingBtn);
         divBtnsProduct.appendChild(favoriteBtn);
+        divBtnsProduct.appendChild(removeBtn);
         shoppingBtn.appendChild(shoppingImg);
         favoriteBtn.appendChild(favoriteImg);
+        removeBtn.appendChild(removeImg);
         liProduct.appendChild(divCard);
         ulProductsGallery.appendChild(liProduct);
     });

@@ -14,6 +14,8 @@
   --mtv-bg-button-default: #17b599;
   --mtv-bg-button-hover: #0f917c;
   --mtv-bg-button-hover2: #cdfaee;
+  --mtv-bg-hambMenu: #f0fdf9e0;
+
   
   /* TEXT COLORS */
   --mtv-txtColor-primary: #052e2a;
@@ -112,6 +114,7 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: var(--mtv-txtColor-secondary);
 }
 
 a:hover {

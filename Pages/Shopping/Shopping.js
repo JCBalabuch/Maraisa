@@ -1,12 +1,9 @@
 import "./Shopping.css";
 
 const Shopping = () => {
-    return `
+  return `
     Hola desde Shopping
-    `
-   }
-   
-//    const shopping = document.querySelector("main");
-//    shopping.appendChild(Shopping());
-   
-   export default Shopping;
+    `;
+};
+
+export default Shopping;

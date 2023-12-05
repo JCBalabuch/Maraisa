@@ -81,9 +81,6 @@ const createClearFiltersButton = () => {
   const clearFiltersButton = document.createElement("button");
   clearFiltersButton.id = "clearFilters";
   clearFiltersButton.textContent = "Limpiar filtros";
-  // clearFiltersButton.addEventListener("Click", clearFilters);
-  // clearFiltersButton.addEventListener("click", () => {console.log("El botón de limpiar filtros ha sido clicado")});
-  // console.log(clearFiltersButton)
 
   return clearFiltersButton;
 };
@@ -132,7 +129,7 @@ export const clearFilters = () => {
 
 export const filterProducts = () => {
   let productsGallery = document.getElementById("productsGallery")
-  productsGallery = "";
+  productsGallery.innerHTML = "";
   
   const products = [... PRODUCTS];
   const nameFilter = document.getElementById("nameFilter").value.toLowerCase();
@@ -158,29 +155,5 @@ export const filterProducts = () => {
 
   console.log(filteredProducts)
 
-  galleryTemplate(filteredProducts);
+  productsGallery.appendChild(galleryTemplate(filteredProducts));
 };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   document
-//     .getElementById("nameFilter")
-//     .addEventListener("input", filterProducts);
-//   document
-//     .getElementById("categoryFilter")
-//     .addEventListener("change", filterProducts);
-//   document
-//     .getElementById("stateFilter")
-//     .addEventListener("change", filterProducts);
-//   document
-//     .getElementById("priceFilter")
-//     .addEventListener("input", filterProducts);
-//   document
-//     .getElementById("clearFilters")
-//     .addEventListener("click", clearFilters);
-// });
-
-// document.getElementById("nameFilter").addEventListener("input", filterProducts);
-// document.getElementById("categoryFilter").addEventListener("change", filterProducts);
-// document.getElementById("stateFilter").addEventListener("change", filterProducts);
-// document.getElementById("priceFilter").addEventListener("input", filterProducts);
-// document.getElementById("clearFilters").addEventListener("click", clearFilters);

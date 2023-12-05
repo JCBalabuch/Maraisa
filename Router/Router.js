@@ -53,19 +53,19 @@ export const router = () => {
 
 window.addEventListener("popstate", router);
 
-// document.addEventListener("DOMContentLoaded", router);
-
 window.addEventListener("DOMContentLoaded", () => {
   router();
   addListeners();
 
-  let images = document.querySelectorAll(".imgProduct");
-  console.log(images);
-  images.forEach((img) =>
-    img.addEventListener("click", (e) => {
-      console.log(`Card clicked: ${e.target.getAttribute("alt")}`);
-    })
-  );
+  //TODO - para hacer los favoritos y la cesta
+  // let favorites = document.querySelectorAll(".favoriteBtn");
+  // console.log(favorites);
+  // favorites.forEach((img) =>
+  //   img.addEventListener("click", (e) => {
+  //     console.log(`Card clicked: ${e.target.getAttribute("alt")}`);
+  //     console.log(`Card clicked: ${e}`);
+  //   })
+  // );
 
   document
     .getElementById("nameFilter")
@@ -95,19 +95,4 @@ export const addListeners = () => {
     });
   });
 
-  // document
-  //   .getElementById("nameFilter")
-  //   .addEventListener("input", filterProducts);
-  // document
-  //   .getElementById("categoryFilter")
-  //   .addEventListener("change", filterProducts);
-  // document
-  //   .getElementById("stateFilter")
-  //   .addEventListener("change", filterProducts);
-  // document
-  //   .getElementById("priceFilter")
-  //   .addEventListener("input", filterProducts);
-  // document
-  //   .getElementById("clearFilters")
-  //   .addEventListener("click", clearFilters);
 };

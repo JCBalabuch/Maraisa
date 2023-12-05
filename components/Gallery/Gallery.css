@@ -10,10 +10,12 @@
   gap: var(--mtv-gap-m);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
+  justify-content: center;
+  }
 
 .divCard {
   width: auto;
+  max-width: 300px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -66,7 +68,8 @@
 }
 
 .shoppingBtn,
-.favoriteBtn {
+.favoriteBtn,
+.removeBtn {
     background-color: var(--mtv-bg-primary);
     border-radius: var(--mtv-bradius);
     padding: var(--mtv-padding-ss);
@@ -75,7 +78,11 @@
 }
 
 .shoppingBtn:hover,
-.favoriteBtn:hover {
+.favoriteBtn:hover,
+.removeBtn:hover {
     background-color: var(--mtv-bg-button-hover2);
 }
 
+.removeBtn {
+    display: none;
+}

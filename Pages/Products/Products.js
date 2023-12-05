@@ -1,7 +1,6 @@
-// import { filters } from "../../components/Filters/Filters";
+import "./Products.css";
 import { filters } from "../../components/Filters/Filters";
 import { gallery } from "../../components/Gallery/Gallery";
-import "./Products.css";
 
 const Products = () => {
   return `

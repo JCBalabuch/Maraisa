@@ -33,6 +33,7 @@ export const Copyright = () => {
         <a href="${imagesLink}" target="_blank">${imagesLink}</a>
       </div>
     </section>
+    <h5>Gracias Leyinko 🐛</h5>  
     </div>
   `
 };

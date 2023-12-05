@@ -15,6 +15,7 @@ const Header = () => {
   header.appendChild(headerLogo);
 
   const nav = document.createElement("nav");
+  nav.id = "nav";
   const ul = document.createElement("ul");
 
   const liHome = document.createElement("li");
@@ -83,7 +84,7 @@ const Header = () => {
   ul.appendChild(liFavorites);
 
   nav.appendChild(ul);
-  nav.appendChild(hambMenu);
+  header.appendChild(hambMenu);
   header.appendChild(nav);
 
   return header;
@@ -93,3 +94,18 @@ const header = document.querySelector("header");
 header.appendChild(Header());
 
 export default Header;
+
+const toggleButton = document.getElementById("hambMenu");
+const navWrapper = document.getElementById("nav");
+
+toggleButton.addEventListener("click", () => {
+  toggleButton.classList.toggle("close");
+  navWrapper.classList.toggle("show")
+});
+
+navWrapper.addEventListener("click", e => {
+  if (e.target.id === "nav") {
+    navWrapper.classList.remove("show");
+    toggleButton.classList.remove("close");
+  }
+});
