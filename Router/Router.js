@@ -91,7 +91,7 @@ export const addListeners = () => {
       ev.preventDefault();
       const href = link.getAttribute("href");
       history.pushState(null, null, href);
-      // router();
+      router();
     });
   });
 
