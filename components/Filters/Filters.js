@@ -48,7 +48,6 @@ const createCategoryFilter = () => {
   categoryFilterSelect.addEventListener("change", () => {
     console.log(categoryFilterSelect.value);
   });
-  console.log(categoryFilterSelect.value);
 
   return categoryFilterSelect;
 };
@@ -128,20 +127,14 @@ export const clearFilters = () => {
 };
 
 export const filterProducts = () => {
-  let productsGallery = document.getElementById("productsGallery")
+  let productsGallery = document.getElementById("productsGallery");
   productsGallery.innerHTML = "";
-  
-  const products = [... PRODUCTS];
+
+  const products = [...PRODUCTS];
   const nameFilter = document.getElementById("nameFilter").value.toLowerCase();
   const categoryFilter = document.getElementById("categoryFilter").value;
   const stateFilter = document.getElementById("stateFilter").value;
   const priceFilter = document.getElementById("priceFilter").value;
-
-  console.log(nameFilter)
-  console.log(categoryFilter)
-  console.log(stateFilter)
-  console.log(priceFilter)
-  console.log(products)
 
   const filteredProducts = products.filter((product) => {
     return (
@@ -152,8 +145,6 @@ export const filterProducts = () => {
       (product.price <= priceFilter || priceFilter === "")
     );
   });
-
-  console.log(filteredProducts)
 
   productsGallery.appendChild(galleryTemplate(filteredProducts));
 };

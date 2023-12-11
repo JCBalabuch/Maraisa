@@ -7,6 +7,7 @@ import Favorites from "../Pages/Favorites/Favorites";
 import Shopping from "../Pages/Shopping/Shopping";
 import notFound from "../Pages/NotFound/NotFound";
 import { clearFilters, filterProducts } from "../components/Filters/Filters";
+import { toggleFavorite } from "../components/Gallery/Gallery";
 
 const routes = [
   {
@@ -67,6 +68,17 @@ window.addEventListener("DOMContentLoaded", () => {
   //   })
   // );
 
+  // let favorites = document.querySelectorAll(".favoriteBtn");
+  // // console.log(favorites);
+  // favorites.forEach((favorite) =>
+  // favorite.addEventListener("click", () => {
+  //     console.log(favorite.id)
+  //     // let element = document.getElementById(element.id);
+  //     // console.log(element);
+  //     // toggleFavorite(element.id)
+  //   })
+  // );
+
   document
     .getElementById("nameFilter")
     .addEventListener("input", filterProducts);
@@ -94,5 +106,4 @@ export const addListeners = () => {
       router();
     });
   });
-
 };
