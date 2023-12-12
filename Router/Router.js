@@ -7,7 +7,7 @@ import Favorites from "../Pages/Favorites/Favorites";
 import Shopping from "../Pages/Shopping/Shopping";
 import notFound from "../Pages/NotFound/NotFound";
 import { clearFilters, filterProducts } from "../components/Filters/Filters";
-import { toggleFavorite } from "../components/Gallery/Gallery";
+// import { toggleFavorite } from "../components/Gallery/Gallery";
 
 const routes = [
   {
@@ -56,13 +56,24 @@ window.addEventListener("popstate", router);
 
 window.addEventListener("DOMContentLoaded", () => {
   router();
-  addListeners();
 
-  document.getElementById("nameFilter").addEventListener("input", filterProducts);
-  document.getElementById("categoryFilter").addEventListener("change", filterProducts);
-  document.getElementById("stateFilter").addEventListener("change", filterProducts);
-  document.getElementById("priceFilter").addEventListener("input", filterProducts);
-  document.getElementById("clearFilters").addEventListener("click", clearFilters);
+  document
+    .getElementById("nameFilter")
+    .addEventListener("input", filterProducts);
+  document
+    .getElementById("categoryFilter")
+    .addEventListener("change", filterProducts);
+  document
+    .getElementById("stateFilter")
+    .addEventListener("change", filterProducts);
+  document
+    .getElementById("priceFilter")
+    .addEventListener("input", filterProducts);
+  document
+    .getElementById("clearFilters")
+    .addEventListener("click", clearFilters);
+
+    addListeners();
 });
 
 export const addListeners = () => {
@@ -77,25 +88,23 @@ export const addListeners = () => {
   });
 };
 
+//TODO - para hacer los favoritos y la cesta
+// let favorites = document.querySelectorAll(".favoriteBtn");
+// console.log(favorites);
+// favorites.forEach((img) =>
+//   img.addEventListener("click", (e) => {
+//     console.log(`Card clicked: ${e.target.getAttribute("alt")}`);
+//     console.log(`Card clicked: ${e}`);
+//   })
+// );
 
-
-  //TODO - para hacer los favoritos y la cesta
-  // let favorites = document.querySelectorAll(".favoriteBtn");
-  // console.log(favorites);
-  // favorites.forEach((img) =>
-  //   img.addEventListener("click", (e) => {
-  //     console.log(`Card clicked: ${e.target.getAttribute("alt")}`);
-  //     console.log(`Card clicked: ${e}`);
-  //   })
-  // );
-
-  // let favoritesBtn = document.querySelectorAll(".favoriteBtn");
-  // // console.log(favorites);
-  // favoritesBtn.forEach((favorite) =>
-  // favoritesBtn.addEventListener("click", () => {
-  //     console.log(favorite.id)
-  //     // let element = document.getElementById(element.id);
-  //     // console.log(element);
-  //     // toggleFavorite(element.id)
-  //   })
-  // );
+// let favoritesBtn = document.querySelectorAll(".favoriteBtn");
+// // console.log(favorites);
+// favoritesBtn.forEach((favorite) =>
+// favoritesBtn.addEventListener("click", () => {
+//     console.log(favorite.id)
+//     // let element = document.getElementById(element.id);
+//     // console.log(element);
+//     // toggleFavorite(element.id)
+//   })
+// );
