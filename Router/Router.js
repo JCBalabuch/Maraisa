@@ -54,7 +54,7 @@ export const router = () => {
 
 window.addEventListener("popstate", router);
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   router();
   addListeners();
 
@@ -68,10 +68,10 @@ window.addEventListener("DOMContentLoaded", () => {
   //   })
   // );
 
-  // let favorites = document.querySelectorAll(".favoriteBtn");
+  // let favoritesBtn = document.querySelectorAll(".favoriteBtn");
   // // console.log(favorites);
-  // favorites.forEach((favorite) =>
-  // favorite.addEventListener("click", () => {
+  // favoritesBtn.forEach((favorite) =>
+  // favoritesBtn.addEventListener("click", () => {
   //     console.log(favorite.id)
   //     // let element = document.getElementById(element.id);
   //     // console.log(element);
