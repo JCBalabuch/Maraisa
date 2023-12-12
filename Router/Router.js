@@ -54,9 +54,30 @@ export const router = () => {
 
 window.addEventListener("popstate", router);
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
   router();
   addListeners();
+
+  document.getElementById("nameFilter").addEventListener("input", filterProducts);
+  document.getElementById("categoryFilter").addEventListener("change", filterProducts);
+  document.getElementById("stateFilter").addEventListener("change", filterProducts);
+  document.getElementById("priceFilter").addEventListener("input", filterProducts);
+  document.getElementById("clearFilters").addEventListener("click", clearFilters);
+});
+
+export const addListeners = () => {
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      const href = link.getAttribute("href");
+      history.pushState(null, null, href);
+      router();
+    });
+  });
+};
+
+
 
   //TODO - para hacer los favoritos y la cesta
   // let favorites = document.querySelectorAll(".favoriteBtn");
@@ -78,32 +99,3 @@ document.addEventListener("DOMContentLoaded", () => {
   //     // toggleFavorite(element.id)
   //   })
   // );
-
-  document
-    .getElementById("nameFilter")
-    .addEventListener("input", filterProducts);
-  document
-    .getElementById("categoryFilter")
-    .addEventListener("change", filterProducts);
-  document
-    .getElementById("stateFilter")
-    .addEventListener("change", filterProducts);
-  document
-    .getElementById("priceFilter")
-    .addEventListener("input", filterProducts);
-  document
-    .getElementById("clearFilters")
-    .addEventListener("click", clearFilters);
-});
-
-export const addListeners = () => {
-  const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (ev) => {
-      ev.preventDefault();
-      const href = link.getAttribute("href");
-      history.pushState(null, null, href);
-      router();
-    });
-  });
-};
