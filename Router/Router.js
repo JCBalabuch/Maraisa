@@ -7,7 +7,7 @@ import Favorites from "../Pages/Favorites/Favorites";
 import Shopping from "../Pages/Shopping/Shopping";
 import notFound from "../Pages/NotFound/NotFound";
 import { clearFilters, filterProducts } from "../components/Filters/Filters";
-// import { toggleFavorite } from "../components/Gallery/Gallery";
+import { toggleFavorite } from "../components/Gallery/Gallery";
 
 const routes = [
   {
@@ -54,8 +54,9 @@ export const router = () => {
 
 window.addEventListener("popstate", router);
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   router();
+  addListeners();
 
   document
     .getElementById("nameFilter")
@@ -73,7 +74,46 @@ window.addEventListener("DOMContentLoaded", () => {
     .getElementById("clearFilters")
     .addEventListener("click", clearFilters);
 
-    addListeners();
+
+    let favoriteBtns = document.querySelectorAll(".favoriteBtn");
+    favoriteBtns.forEach((favoriteBtn) => 
+    // favoriteBtn.addEventListener("click", () => {
+    //   console.log(favoriteBtn)
+    // })
+    favoriteBtn.addEventListener("click", toggleFavorite(favoriteBtn))
+    )
+
+    let shoppingBtns = document.querySelectorAll(".shoppingBtn");
+    shoppingBtns.forEach((shoppingBtn) => 
+    shoppingBtn.addEventListener("click", () => {
+        console.log(shoppingBtn)
+      })
+    )
+    // let favoritesBtn = document.querySelectorAll(".favoriteBtn");
+// // console.log(favorites);
+// favoritesBtn.forEach((favorite) =>
+// favoritesBtn.addEventListener("click", () => {
+//     console.log(favorite.id)
+//     // let element = document.getElementById(element.id);
+//     // console.log(element);
+//     // toggleFavorite(element.id)
+//   })
+// );
+
+// let favorites = document.querySelectorAll(".favoriteBtn");
+// console.log(favorites);
+// favorites.forEach((img) =>
+//   img.addEventListener("click", (e) => {
+//     console.log(`Card clicked: ${e.target.getAttribute("alt")}`);
+//     console.log(`Card clicked: ${e}`);
+//   })
+// );
+
+
+
+
+
+    
 });
 
 export const addListeners = () => {

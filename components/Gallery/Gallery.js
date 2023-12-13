@@ -11,11 +11,10 @@ export const galleryTemplate = (products) => {
 
   products.forEach((product) => {
     const liProduct = document.createElement("li");
-    liProduct.id = `product-${product.id}`;
-    // console.log(liProduct.id);
 
-    const divCard = document.createElement("div");
-    divCard.classList = "divCard";
+    const cardProduct = document.createElement("div");
+    cardProduct.id = `product-${product.id}`;
+    cardProduct.classList = "cardProduct";
 
     const nameProduct = document.createElement("h3");
     nameProduct.textContent = product.name;
@@ -41,11 +40,6 @@ export const galleryTemplate = (products) => {
     const favoriteBtn = document.createElement("button");
     favoriteBtn.id = "favoriteBtn";
     favoriteBtn.classList = "favoriteBtn";
-    // favoriteBtn.addEventListener("click", () => {
-    //   const element = document.getElementById(liProduct.id);
-    //   toggleFavorite(element)
-    //   console.log(element);
-    // })
     const favoriteImg = document.createElement("img");
     favoriteImg.src = "/Logos/CorazonLleno.png";
     favoriteImg.alt = "Añadir a Favoritos";
@@ -64,19 +58,19 @@ export const galleryTemplate = (products) => {
     removeImg.src = "/Logos/eliminar.png";
     removeImg.alt = "Eliminar";
 
-    divCard.appendChild(nameProduct);
-    divCard.appendChild(divImgProduct);
+    cardProduct.appendChild(nameProduct);
+    cardProduct.appendChild(divImgProduct);
     divImgProduct.appendChild(imgProduct);
-    divCard.appendChild(regionProduct);
-    divCard.appendChild(priceProduct);
-    divCard.appendChild(divBtnsProduct);
+    cardProduct.appendChild(regionProduct);
+    cardProduct.appendChild(priceProduct);
+    cardProduct.appendChild(divBtnsProduct);
     divBtnsProduct.appendChild(shoppingBtn);
     divBtnsProduct.appendChild(favoriteBtn);
     divBtnsProduct.appendChild(removeBtn);
     shoppingBtn.appendChild(shoppingImg);
     favoriteBtn.appendChild(favoriteImg);
     removeBtn.appendChild(removeImg);
-    liProduct.appendChild(divCard);
+    liProduct.appendChild(cardProduct);
     ulProductsGallery.appendChild(liProduct);
   });
   productsGallery.appendChild(ulProductsGallery);
@@ -91,24 +85,33 @@ export const gallery = () => {
         `;
 };
 
-// export const toggleFavorite = (element) => {
-//   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+export const toggleFavorite = (element) => {
+    
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-//   if (favorites.includes(element)) {
-//     favorites = favorites.filter((item) => item !== element);
-//   } else {
-//     favorites.push(element);
-//   }
-//   localStorage.setItem("favorites", JSON.stringify(favorites));
-// };
+  const cardProduct = element.parentElement.parentElement;
+
+  console.log(cardProduct);
+
+  if (favorites.includes(cardProduct)) {
+    favorites = favorites.filter((item) => item !== cardProduct);
+  } else {
+    favorites.push(cardProduct);
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+};
 
 // export const toggleShopping = (element) => {
 //   let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
 
-//   if (shopping.includes(element)) {
-//     shopping = shopping.filter((item) => item !== element);
+// const cardProduct = element.parentElement.parentElement;
+
+//  console.log(cardProduct);
+
+//   if (shopping.includes(cardProduct)) {
+//     shopping = shopping.filter((item) => item !== cardProduct);
 //   } else {
-//     shopping.push(element);
+//     shopping.push(cardProduct);
 //   }
 //   localStorage.setItem("shopping", JSON.stringify(shopping));
 // };
