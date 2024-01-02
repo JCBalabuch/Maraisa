@@ -88,16 +88,23 @@ export const gallery = () => {
 export const toggleFavorite = (element) => {
     
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
+  
   const cardProduct = element.parentElement.parentElement;
+  
+  console.log(favorites);
 
+if (favorites.includes(cardProduct)) {
   console.log(cardProduct);
+} else {
+  favorites.push(cardProduct)
+}
 
-  if (favorites.includes(cardProduct)) {
-    favorites = favorites.filter((item) => item !== cardProduct);
-  } else {
-    favorites.push(cardProduct);
-  }
+  // if (favorites.includes(cardProduct)) {
+  //   favorites = favorites.filter((item) => item !== cardProduct);
+  // } else {
+  //   favorites.push(cardProduct);
+  // }
+
   localStorage.setItem("favorites", JSON.stringify(favorites));
 };
 

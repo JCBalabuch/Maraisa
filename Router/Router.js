@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", clearFilters);
 
 
-    let favoriteBtns = document.querySelectorAll(".favoriteBtn");
+    let favoriteBtns = document.querySelectorAll("#favoriteBtn");
     favoriteBtns.forEach((favoriteBtn) => 
     // favoriteBtn.addEventListener("click", () => {
     //   console.log(favoriteBtn)

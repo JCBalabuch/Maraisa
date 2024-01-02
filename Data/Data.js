@@ -249,7 +249,7 @@ export const PRODUCTS = [
   },
   {
     id: "1032",
-    name: "Lámpara de madera y papel",
+    name: "Lámpara MadPap",
     category: "Lámparas",
     state: "Mérida",
     image: "/products/Mérida - Lámparas2.jpg",
