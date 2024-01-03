@@ -13,7 +13,7 @@
   justify-content: center;
   }
 
-.divCard {
+.cardProduct {
   width: auto;
   max-width: 300px;
   height: 100%;
@@ -27,7 +27,7 @@
   -moz-box-shadow: 1px 2px 2px 1px rgba(17, 116, 102, 0.1);
 }
 
-.divCard > h3 {
+.cardProduct > h3 {
     color: var(--mtv-txtColor-secondary);
     font-size: larger;
     font-weight: bolder;
@@ -47,16 +47,16 @@
     object-fit: cover;
 }
 
-.divCard > p,
-.divCard > h4 {
+.cardProduct > p,
+.cardProduct > h4 {
     margin-left: var(--mtv-margin-s);
 }
 
-.divCard > h4 {
+.cardProduct > h4 {
     font-weight: bolder;
     background-color: var(--mtv-bg-button-default);
     color: var(--mtv-txtColor-button);
-    width: 20%;
+    width: 25%;
     text-align: center;
     border-radius: 50%;
 }

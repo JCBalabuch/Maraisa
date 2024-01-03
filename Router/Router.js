@@ -54,25 +54,16 @@ export const router = () => {
 
 window.addEventListener("popstate", router);
 
+
 document.addEventListener("DOMContentLoaded", () => {
   router();
   addListeners();
 
-  document
-    .getElementById("nameFilter")
-    .addEventListener("input", filterProducts);
-  document
-    .getElementById("categoryFilter")
-    .addEventListener("change", filterProducts);
-  document
-    .getElementById("stateFilter")
-    .addEventListener("change", filterProducts);
-  document
-    .getElementById("priceFilter")
-    .addEventListener("input", filterProducts);
-  document
-    .getElementById("clearFilters")
-    .addEventListener("click", clearFilters);
+  document.getElementById("nameFilter").addEventListener("input", filterProducts);
+  document.getElementById("categoryFilter").addEventListener("change", filterProducts);
+  document.getElementById("stateFilter").addEventListener("change", filterProducts);
+  document.getElementById("priceFilter").addEventListener("input", filterProducts);
+  document.getElementById("clearFilters").addEventListener("click", clearFilters);
 
 
     let favoriteBtns = document.querySelectorAll("#favoriteBtn");
