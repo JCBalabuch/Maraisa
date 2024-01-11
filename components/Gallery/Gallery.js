@@ -13,7 +13,8 @@ export const galleryTemplate = (products) => {
     const liProduct = document.createElement("li");
 
     const cardProduct = document.createElement("div");
-    cardProduct.id = `product-${product.id}`;
+    // cardProduct.id = `product-${product.id}`;
+    cardProduct.id = `${product.id}`;
     cardProduct.classList = "cardProduct";
 
     const nameProduct = document.createElement("h3");
@@ -86,41 +87,32 @@ export const gallery = () => {
 };
 
 export const toggleFavorite = (element) => {
-    
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  
-  const cardProduct = element.parentElement.parentElement;
-  
-  console.log(favorites);
 
-if (favorites.includes(cardProduct)) {
+  const cardProduct = element.parentElement.parentElement.id;
+
   console.log(cardProduct);
-} else {
-  favorites.push(cardProduct)
-}
 
-  // if (favorites.includes(cardProduct)) {
-  //   favorites = favorites.filter((item) => item !== cardProduct);
-  // } else {
-  //   favorites.push(cardProduct);
-  // }
+  if (favorites.includes(cardProduct)) {
+    favorites = favorites.filter((item) => item !== cardProduct);
+  } else {
+    favorites.push(cardProduct);
+  }
 
   localStorage.setItem("favorites", JSON.stringify(favorites));
 };
 
-// export const toggleShopping = (element) => {
-//   let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
+export const toggleShopping = (element) => {
+  let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
 
-// const cardProduct = element.parentElement.parentElement;
+  const cardProduct = element.parentElement.parentElement.id;
 
-//  console.log(cardProduct);
+  console.log(cardProduct);
 
-//   if (shopping.includes(cardProduct)) {
-//     shopping = shopping.filter((item) => item !== cardProduct);
-//   } else {
-//     shopping.push(cardProduct);
-//   }
-//   localStorage.setItem("shopping", JSON.stringify(shopping));
-// };
-
-
+  if (shopping.includes(cardProduct)) {
+    shopping = shopping.filter((item) => item !== cardProduct);
+  } else {
+    shopping.push(cardProduct);
+  }
+  localStorage.setItem("shopping", JSON.stringify(shopping));
+};
