@@ -52,13 +52,6 @@ export const galleryTemplate = (products) => {
     shoppingImg.src = "/Logos/AñadirCesta.png";
     shoppingImg.alt = "Añadir a Cesta";
 
-    const removeBtn = document.createElement("button");
-    removeBtn.id = "removeBtn";
-    removeBtn.classList = "removeBtn";
-    const removeImg = document.createElement("img");
-    removeImg.src = "/Logos/eliminar.png";
-    removeImg.alt = "Eliminar";
-
     cardProduct.appendChild(nameProduct);
     cardProduct.appendChild(divImgProduct);
     divImgProduct.appendChild(imgProduct);
@@ -67,10 +60,8 @@ export const galleryTemplate = (products) => {
     cardProduct.appendChild(divBtnsProduct);
     divBtnsProduct.appendChild(shoppingBtn);
     divBtnsProduct.appendChild(favoriteBtn);
-    divBtnsProduct.appendChild(removeBtn);
     shoppingBtn.appendChild(shoppingImg);
     favoriteBtn.appendChild(favoriteImg);
-    removeBtn.appendChild(removeImg);
     liProduct.appendChild(cardProduct);
     ulProductsGallery.appendChild(liProduct);
   });

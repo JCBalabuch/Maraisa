@@ -82,7 +82,3 @@
 .removeBtn:hover {
     background-color: var(--mtv-bg-button-hover2);
 }
-
-.removeBtn {
-    display: none;
-}

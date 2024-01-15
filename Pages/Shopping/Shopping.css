@@ -1,0 +1,28 @@
+.shoppingContainer {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoppingGallery {
+  width: 100%;
+  height: 100%;
+}
+
+.shoppingGallery > ul {
+  width: 100%;
+  height: 100%;
+  padding: var(--mtv-padding-m);
+  gap: var(--mtv-gap-m);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .shoppingBtnShp {
+    display: none;
+} */
