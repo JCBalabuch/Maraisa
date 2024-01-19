@@ -67,8 +67,8 @@
     margin-right: var(--mtv-margin-m);
 }
 
-.shoppingBtn,
-.favoriteBtn,
+#shoppingBtn,
+#favoriteBtn,
 .removeBtn {
     background-color: var(--mtv-bg-primary);
     border-radius: var(--mtv-bradius);

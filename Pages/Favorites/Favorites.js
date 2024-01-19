@@ -1,27 +1,38 @@
 import "./Favorites.css";
 import { PRODUCTS } from "../../Data/Data";
-import { FavShpGallery } from "../../components/FavShpGallery/FavShpGallery";
+import { favGallery } from "../../components/FavGallery/FavGallery";
 
 const favoritesStorage = () => {
+  const favoriteGallery = getFavoriteGallery();
+  return favoriteGallery;
+};
+
+const getFavoriteGallery = () => {
   const favoritesGallery = document.createElement("div");
   favoritesGallery.classList = "favoriteGallery";
 
   const favoritesGalleryUl = document.createElement("ul");
   favoritesGalleryUl.innerHTML = "";
+  let favoriteProducts = [];
 
-  // let favoritesInStorage = JSON.parse(localStorage.getItem("favorites")) || [];
   const favoritesInStorage = localStorage.getItem("favorites");
 
-  const favoriteProducts = PRODUCTS.filter((product) =>
-    favoritesInStorage.includes(product.id)
-  );
+  if (favoritesInStorage) {
+    favoriteProducts = PRODUCTS.filter((product) =>
+      favoritesInStorage.includes(product.id)
+    );
+  } else {
+    const noFavoritesMessage = document.createElement("p");
+    noFavoritesMessage.textContent = "No tienes productos favoritos";
+    favoritesGalleryUl.appendChild(noFavoritesMessage);
+  }
 
   console.log(favoriteProducts);
 
   const fragment = document.createDocumentFragment();
 
   favoriteProducts.forEach((product) => {
-    const itemFavShp = FavShpGallery(product)
+    const itemFavShp = favGallery(product);
     fragment.appendChild(itemFavShp);
   });
 

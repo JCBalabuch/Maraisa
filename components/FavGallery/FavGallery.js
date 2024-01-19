@@ -1,6 +1,6 @@
-import "./FavShpGallery.css";
+import "./FavGallery.css";
 
-export const FavShpGallery = (product) => {
+export const favGallery = (product) => {
 
     const itemFavShp = document.createElement("li");
     itemFavShp.id = `${product.id}`;
@@ -21,20 +21,20 @@ export const FavShpGallery = (product) => {
     priceItemFavShp.textContent = product.price;
     priceItemFavShp.textContent += "$";
 
-    const quantityProduct = document.createElement("input");
-    quantityProduct.type = "number";
-    quantityProduct.id = "quantityProduct";
-    quantityProduct.classList = "quantityProductFavorites quantityProductShopping";
+    // const quantityProduct = document.createElement("input");
+    // quantityProduct.type = "number";
+    // quantityProduct.id = "quantityProduct";
+    // quantityProduct.classList = "quantityProductFavorites quantityProductShopping";
 
     const divBtnsItems = document.createElement("div");
     divBtnsItems.classList = "divBtnsItems";
 
-    const favoriteBtn = document.createElement("button");
-    favoriteBtn.id = "favoriteBtn";
-    favoriteBtn.classList = "favoriteBtnFav favoriteBtnShp";
-    const favoriteImg = document.createElement("img");
-    favoriteImg.src = "/Logos/CorazonLleno.png";
-    favoriteImg.alt = "Añadir a Favoritos";
+    // const favoriteBtn = document.createElement("button");
+    // favoriteBtn.id = "favoriteBtn";
+    // favoriteBtn.classList = "favoriteBtnFav favoriteBtnShp";
+    // const favoriteImg = document.createElement("img");
+    // favoriteImg.src = "/Logos/CorazonLleno.png";
+    // favoriteImg.alt = "Añadir a Favoritos";
 
     const shoppingBtn = document.createElement("button");
     shoppingBtn.id = "shoppingBtn";
@@ -50,21 +50,19 @@ export const FavShpGallery = (product) => {
     removeImg.src = "/Logos/eliminar.png";
     removeImg.alt = "Eliminar";
 
-
-    favoriteBtn.appendChild(favoriteImg);
+    // favoriteBtn.appendChild(favoriteImg);
     shoppingBtn.appendChild(shoppingImg);
     removeBtn.appendChild(removeImg);
 
-    divBtnsItems.appendChild(favoriteBtn);
+    // divBtnsItems.appendChild(favoriteBtn);
     divBtnsItems.appendChild(shoppingBtn);
     divBtnsItems.appendChild(removeBtn);
-
 
     divImageItemFavShp.appendChild(imageItemFavShp);
     itemFavShp.appendChild(divImageItemFavShp);
     itemFavShp.appendChild(nameItemFavShp);
     itemFavShp.appendChild(priceItemFavShp);
-    itemFavShp.appendChild(quantityProduct);
+    // itemFavShp.appendChild(quantityProduct);
     itemFavShp.appendChild(divBtnsItems);
 
     return itemFavShp
