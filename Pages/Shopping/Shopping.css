@@ -23,6 +23,14 @@
   align-items: center;
 }
 
+.totalPurchaseDiv {
+  display: flex;
+  gap: var(--mtv-gap-m);
+  justify-content: flex-end;
+  margin-right: 180px;
+  font-weight: bolder;
+}
+
 /* .shoppingBtnShp {
     display: none;
 } */

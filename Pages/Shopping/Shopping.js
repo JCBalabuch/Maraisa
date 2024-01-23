@@ -11,6 +11,18 @@ const getShoppingGallery = () => {
   const shoppingGallery = document.createElement("div");
   shoppingGallery.classList = "shoppingGallery";
 
+  const totalPurchaseDiv = document. createElement("div");
+  totalPurchaseDiv.className = ("totalPurchaseDiv");
+
+  const totalPurchaseName = document.createElement("h3");
+  totalPurchaseName.className = "totalPurchaseName";
+  totalPurchaseName.innerText = "TOTAL";
+
+  const totalPurchase = document.createElement("h3");
+  totalPurchase.id = "totalPurchase";
+  totalPurchase.className = "totalPurchase";
+  totalPurchase.innerText = "0$";
+
   const shoppingGalleryUl = document.createElement("ul");
   shoppingGalleryUl.innerHTML = "";
   let shoppingProducts = [];
@@ -37,8 +49,12 @@ const getShoppingGallery = () => {
     fragment.appendChild(itemFavShp);
   });
 
+  totalPurchaseDiv.appendChild(totalPurchaseName);
+  totalPurchaseDiv.appendChild(totalPurchase);
+
   shoppingGalleryUl.appendChild(fragment);
   shoppingGallery.appendChild(shoppingGalleryUl);
+  shoppingGallery.appendChild(totalPurchaseDiv);
 
   return shoppingGallery;
 };

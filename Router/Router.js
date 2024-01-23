@@ -8,6 +8,7 @@ import Shopping from "../Pages/Shopping/Shopping";
 import notFound from "../Pages/NotFound/NotFound";
 import { clearFilters, filterProducts } from "../components/Filters/Filters";
 import { toggleFavorite, toggleShopping } from "../components/Gallery/Gallery";
+import { calcSubTotalProduct } from "../components/ShoppingGalley/ShoppingGallery";
 
 const routes = [
   {
@@ -67,20 +68,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     let favoriteBtns = document.querySelectorAll("#favoriteBtn");
-    favoriteBtns.forEach((favoriteBtn) => 
-    favoriteBtn.addEventListener("click", () => {
-      console.log(favoriteBtn)
-      favoriteBtn.addEventListener("click", toggleFavorite(favoriteBtn))
+      favoriteBtns.forEach((favoriteBtn) => 
+      favoriteBtn.addEventListener("click", () => {
+        console.log(favoriteBtn)
+        // favoriteBtn.addEventListener("click", toggleFavorite(favoriteBtn))
     })
     )
 
     let shoppingBtns = document.querySelectorAll("#shoppingBtn");
-    shoppingBtns.forEach((shoppingBtn) => 
-    shoppingBtn.addEventListener("click", () => {
+      shoppingBtns.forEach((shoppingBtn) => 
+      shoppingBtn.addEventListener("click", () => {
         console.log(shoppingBtn)
-        shoppingBtn.addEventListener("click", toggleShopping(shoppingBtn))
+        // shoppingBtn.addEventListener("click", toggleShopping(shoppingBtn))
       })
     )
+
+    // let subTotalProducts = document.querySelectorAll("#totalByProduct");
+    //   subTotalProducts.forEach((subTotalProduct) => 
+    //     subTotalProduct.addEventListener("change", calcSubTotalProduct)
+    //   );
 });
 
 export const addListeners = () => {

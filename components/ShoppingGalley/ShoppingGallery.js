@@ -18,8 +18,11 @@ export const ShpGallery = (product) => {
     nameItemShp.textContent = product.name;
 
     const priceItemShp = document.createElement("h4");
-    priceItemShp.textContent = product.price;
-    priceItemShp.textContent += "$";
+    priceItemShp.id = "priceItem";
+    priceItemShp.textContent = parseFloat(product.price);
+    // priceItemShp.textContent += "$";
+
+    console.log(priceItemShp.textContent);
 
     const quantityProduct = document.createElement("input");
     quantityProduct.type = "number";
@@ -27,6 +30,13 @@ export const ShpGallery = (product) => {
     quantityProduct.classList = "quantityProduct";
     quantityProduct.min = 1;
     quantityProduct.value = 1;
+    quantityProduct.addEventListener("change", calcSubTotalProduct())
+
+    const totalByProduct = document.createElement("h4");
+    totalByProduct.id = "totalByProduct"
+    totalByProduct.classList = "totalByProduct"
+    totalByProduct.textContent = parseFloat(priceItemShp.textContent * quantityProduct.value);
+    // totalByProduct.textContent += "$";
 
     const divBtnsItems = document.createElement("div");
     divBtnsItems.classList = "divBtnsItems";
@@ -65,7 +75,20 @@ export const ShpGallery = (product) => {
     itemShp.appendChild(nameItemShp);
     itemShp.appendChild(priceItemShp);
     itemShp.appendChild(quantityProduct);
+    itemShp.appendChild(totalByProduct);
     itemShp.appendChild(divBtnsItems);
 
     return itemShp
 }
+
+
+export const calcSubTotalProduct = () => {
+    // const priceItemShp = document.getElementById("priceItem").textContent;
+    // const quantityProduct = document.getElementById("quantityProduct").value;
+    // const total = parseFloat(priceItemShp) * parseFloat(quantityProduct);
+    // const totalByProduct = document.getElementById("totalByProduct");
+    // totalByProduct.textContent = total + "$";
+    // console.log(priceItemShp.textContent);
+}
+
+// calcSubTotalProduct()

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    gap: var(--mtv-gap-s);
     border-top: 1px solid var(--mtv-color-primary);
     border-bottom: 1px solid var(--mtv-color-primary);
 }
@@ -13,7 +14,9 @@
 }
 
 .divImageItemShp {
+    min-width: 100px;
     width: 100px;
+    min-height: 100px;
     height: 100px;
 }
 
