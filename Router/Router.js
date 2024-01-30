@@ -1,45 +1,9 @@
-import Home from "../Pages/Home/Home";
-import Products from "../Pages/Products/Products";
-import About from "../Pages/About/About";
-import { Maraisa } from "../Pages/Maraisa/Maraisa";
-import { Copyright } from "../Pages/Copyright/Copyright";
-import Favorites from "../Pages/Favorites/Favorites";
-import Shopping from "../Pages/Shopping/Shopping";
+import { routes } from "./routes";
 import notFound from "../Pages/NotFound/NotFound";
 import { clearFilters, filterProducts } from "../components/Filters/Filters";
 import { toggleFavorite, toggleShopping } from "../components/Gallery/Gallery";
 import { calcSubTotalProduct } from "../components/ShoppingGalley/ShoppingGallery";
 
-const routes = [
-  {
-    path: "/",
-    component: Home,
-  },
-  {
-    path: "/products",
-    component: Products,
-  },
-  {
-    path: "/about",
-    component: About,
-  },
-  {
-    path: "/maraisa",
-    component: Maraisa,
-  },
-  {
-    path: "/copyright",
-    component: Copyright,
-  },
-  {
-    path: "/favorites",
-    component: Favorites,
-  },
-  {
-    path: "/shopping",
-    component: Shopping,
-  },
-];
 
 export const router = () => {
   const path = window.location.pathname;
@@ -53,41 +17,53 @@ export const router = () => {
   }
 };
 
-window.addEventListener("popstate", router);
+const buttonsAddListeners = () => {
+  let favoriteBtns = document.querySelectorAll("#favoriteBtn");
+  favoriteBtns.forEach((favoriteBtn) =>
+    favoriteBtn.addEventListener("click", () => {
+      console.log(favoriteBtn);
+      favoriteBtn.addEventListener("click", toggleFavorite(favoriteBtn));
+    })
+  );
 
+  let shoppingBtns = document.querySelectorAll("#shoppingBtn");
+  shoppingBtns.forEach((shoppingBtn) =>
+    shoppingBtn.addEventListener("click", () => {
+      console.log(shoppingBtn);
+      shoppingBtn.addEventListener("click", toggleShopping(shoppingBtn));
+    })
+  );
+};
+
+window.addEventListener("popstate", router);
 
 window.addEventListener("DOMContentLoaded", () => {
   router();
   addListeners();
+  buttonsAddListeners();
 
-  document.getElementById("nameFilter").addEventListener("input", filterProducts);
-  document.getElementById("categoryFilter").addEventListener("change", filterProducts);
-  document.getElementById("stateFilter").addEventListener("change", filterProducts);
-  document.getElementById("priceFilter").addEventListener("input", filterProducts);
-  document.getElementById("clearFilters").addEventListener("click", clearFilters);
+  document
+    .getElementById("nameFilter")
+    .addEventListener("input", filterProducts);
+  document
+    .getElementById("categoryFilter")
+    .addEventListener("change", filterProducts);
+  document
+    .getElementById("stateFilter")
+    .addEventListener("change", filterProducts);
+  document
+    .getElementById("priceFilter")
+    .addEventListener("input", filterProducts);
+  document
+    .getElementById("clearFilters")
+    .addEventListener("click", clearFilters);
 
-
-    let favoriteBtns = document.querySelectorAll("#favoriteBtn");
-      favoriteBtns.forEach((favoriteBtn) => 
-      favoriteBtn.addEventListener("click", () => {
-        console.log(favoriteBtn)
-        // favoriteBtn.addEventListener("click", toggleFavorite(favoriteBtn))
-    })
-    )
-
-    let shoppingBtns = document.querySelectorAll("#shoppingBtn");
-      shoppingBtns.forEach((shoppingBtn) => 
-      shoppingBtn.addEventListener("click", () => {
-        console.log(shoppingBtn)
-        // shoppingBtn.addEventListener("click", toggleShopping(shoppingBtn))
-      })
-    )
-
-    // let subTotalProducts = document.querySelectorAll("#totalByProduct");
-    //   subTotalProducts.forEach((subTotalProduct) => 
-    //     subTotalProduct.addEventListener("change", calcSubTotalProduct)
-    //   );
+  let subTotalProducts = document.querySelectorAll("#totalByProduct");
+  subTotalProducts.forEach((subTotalProduct) =>
+    subTotalProduct.addEventListener("change", calcSubTotalProduct)
+  );
 });
+
 
 export const addListeners = () => {
   const navLinks = document.querySelectorAll("nav a");
