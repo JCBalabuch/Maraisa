@@ -4,6 +4,4 @@ Un lugar para que descubras la belleza de Venezuela en cada una de sus piezas de
 
 ![Alt text](image.png)
 
-App creada con Javascript en la que se ejercita manejo del DOM, filtros, funciones y bucles.
-
-Pendiente de incluir funciones que utilizarán el LocalStorage
+App creada con Javascript en la que se ejercita manejo del DOM, filtros, funciones, bucles, manejo de Local Storage y CRUD menos el update.
