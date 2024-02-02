@@ -4,7 +4,6 @@ import { clearFilters, filterProducts } from "../components/Filters/Filters";
 import { toggleFavorite, toggleShopping } from "../components/Gallery/Gallery";
 import { calcSubTotalProduct } from "../components/ShoppingGalley/ShoppingGallery";
 
-
 export const router = () => {
   const path = window.location.pathname;
 
@@ -35,12 +34,45 @@ const buttonsAddListeners = () => {
   );
 };
 
+
+const subTotalPriceProduct = () => {
+  let subTotalProducts = document.querySelectorAll("#totalByProduct");
+    subTotalProducts.forEach((subTotalProduct) => 
+      subTotalProduct.addEventListener("change", calcSubTotalProduct(subTotalProduct)))
+}
+
+
+// const subTotalPriceProduct = () => {
+  
+//   let subTotalProducts = document.querySelectorAll("#totalByProduct");
+//   subTotalProducts.forEach((subTotalProduct) =>
+//   subTotalProduct.addEventListener("change",)
+
+// }
+
+// subTotalProducts.forEach((subTotalProduct) =>
+//   subTotalProduct.addEventListener("change", () => {
+//     const priceItemShp = document.getElementById("priceItem").textContent;
+
+//     console.log(priceItemShp.textContent)
+
+//     const quantityProduct = document.getElementById("quantityProduct").value;
+//     const total = parseFloat(priceItemShp) * parseFloat(quantityProduct);
+//     const totalByProduct = document.getElementById("totalByProduct");
+//     totalByProduct.textContent = total + "$";
+//     console.log(priceItemShp.textContent);
+//   })
+// );
+
+
+
 window.addEventListener("popstate", router);
 
 window.addEventListener("DOMContentLoaded", () => {
   router();
   addListeners();
   buttonsAddListeners();
+  subTotalPriceProduct();
 
   document
     .getElementById("nameFilter")
@@ -58,12 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .getElementById("clearFilters")
     .addEventListener("click", clearFilters);
 
-  let subTotalProducts = document.querySelectorAll("#totalByProduct");
-  subTotalProducts.forEach((subTotalProduct) =>
-    subTotalProduct.addEventListener("change", calcSubTotalProduct)
-  );
 });
-
 
 export const addListeners = () => {
   const navLinks = document.querySelectorAll("nav a");

@@ -13,7 +13,6 @@ export const galleryTemplate = (products) => {
     const liProduct = document.createElement("li");
 
     const cardProduct = document.createElement("div");
-    // cardProduct.id = `product-${product.id}`;
     cardProduct.id = `${product.id}`;
     cardProduct.classList = "cardProduct";
 

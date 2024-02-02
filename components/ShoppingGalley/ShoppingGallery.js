@@ -17,10 +17,15 @@ export const ShpGallery = (product) => {
     const nameItemShp = document.createElement("h3");
     nameItemShp.textContent = product.name;
 
+    const priceItemDiv = document.createElement("div")
+    priceItemDiv.classList = "priceItemDiv";
+
     const priceItemShp = document.createElement("h4");
     priceItemShp.id = "priceItem";
     priceItemShp.textContent = parseFloat(product.price);
-    // priceItemShp.textContent += "$";
+
+    const priceItemShp$ = document.createElement("h4");
+    priceItemShp$.textContent = "$";
 
     console.log(priceItemShp.textContent);
 
@@ -30,13 +35,20 @@ export const ShpGallery = (product) => {
     quantityProduct.classList = "quantityProduct";
     quantityProduct.min = 1;
     quantityProduct.value = 1;
-    quantityProduct.addEventListener("change", calcSubTotalProduct())
+    // quantityProduct.addEventListener("change", calcSubTotalProduct())
+    
+    const totalByProductDiv = document.createElement("div")
+    totalByProductDiv.classList = "priceItemDiv";
 
     const totalByProduct = document.createElement("h4");
     totalByProduct.id = "totalByProduct"
     totalByProduct.classList = "totalByProduct"
-    totalByProduct.textContent = parseFloat(priceItemShp.textContent * quantityProduct.value);
-    // totalByProduct.textContent += "$";
+    // totalByProduct.textContent = parseFloat(priceItemShp.textContent) * parseFloat(quantityProduct.value);
+
+    console.log(totalByProduct.textContent);
+
+    const totalByProduct$ = document.createElement("h4");
+    totalByProduct$.textContent = "$";
 
     const divBtnsItems = document.createElement("div");
     divBtnsItems.classList = "divBtnsItems";
@@ -70,12 +82,18 @@ export const ShpGallery = (product) => {
     // divBtnsItems.appendChild(shoppingBtn);
     divBtnsItems.appendChild(removeBtn);
 
+    priceItemDiv.appendChild(priceItemShp);
+    priceItemDiv.appendChild(priceItemShp$);
+
+    totalByProductDiv.appendChild(totalByProduct);
+    totalByProductDiv.appendChild(totalByProduct$);
+
     divImageItemShp.appendChild(imageItemShp);
     itemShp.appendChild(divImageItemShp);
     itemShp.appendChild(nameItemShp);
-    itemShp.appendChild(priceItemShp);
+    itemShp.appendChild(priceItemDiv);
     itemShp.appendChild(quantityProduct);
-    itemShp.appendChild(totalByProduct);
+    itemShp.appendChild(totalByProductDiv);
     itemShp.appendChild(divBtnsItems);
 
     return itemShp
@@ -83,12 +101,12 @@ export const ShpGallery = (product) => {
 
 
 export const calcSubTotalProduct = () => {
-    // const priceItemShp = document.getElementById("priceItem").textContent;
-    // const quantityProduct = document.getElementById("quantityProduct").value;
-    // const total = parseFloat(priceItemShp) * parseFloat(quantityProduct);
-    // const totalByProduct = document.getElementById("totalByProduct");
-    // totalByProduct.textContent = total + "$";
-    // console.log(priceItemShp.textContent);
+    const priceItemShp = document.getElementById("priceItem").textContent;
+    const quantityProduct = document.getElementById("quantityProduct").value;
+    const total = parseFloat(priceItemShp) * parseFloat(quantityProduct);
+    const totalByProduct = document.getElementById("totalByProduct");
+    totalByProduct.textContent = total + "$";
+        console.log(quantityProduct.value);
 }
 
 // calcSubTotalProduct()

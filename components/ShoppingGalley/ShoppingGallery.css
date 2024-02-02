@@ -27,6 +27,10 @@
     border-radius: var(--mtv-bradius);
 }
 
+.priceItemDiv {
+    display: flex;
+}
+
 .quantityProduct {
     font-family: var(--mtv-font-family);
     font-size: var(--mtv-fontsize-h4);

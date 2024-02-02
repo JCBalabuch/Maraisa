@@ -38,6 +38,8 @@ const getShoppingGallery = () => {
     const noShoppingMessage = document.createElement("p");
     noShoppingMessage.textContent = "No tienes productos en tu cesta";
     shoppingGalleryUl.appendChild(noShoppingMessage);
+    totalPurchaseName.style.display = "none";
+    totalPurchase.style.display = "none";
   };
 
   console.log(shoppingProducts);

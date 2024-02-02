@@ -95,46 +95,4 @@ nav > ul {
     align-items: end;
     justify-content: flex-start;
   }
-
-  /* nav > ul {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 500px;
-    align-items:flex-end;
-    justify-content: flex-end;
-  } */
 }
-
-/* 
-@media (250px <= width <= 800px) {
-
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 500px;
-    width: 500px;
-    margin-left: -100%;
-    transition: all 0.2s linear;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-  }
-
-  nav .show {
-    margin-left: 0;
-  }
-
-  ul {
-    background-color: rgb(250, 250, 250);
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-start;
-  }
-} */
