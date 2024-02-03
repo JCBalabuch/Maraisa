@@ -1,3 +1,4 @@
+import { routes } from "../../Router/Routes";
 import "./Header.css";
 
 const Header = () => {
@@ -22,30 +23,50 @@ const Header = () => {
   const aHome = document.createElement("a");
   aHome.href = "/";
   aHome.textContent = "Home";
+  aHome.onclick = (event) => {
+    event.preventDefault();
+    routes("/");
+  };
   liHome.appendChild(aHome);
 
   const liProducts = document.createElement("li");
   const aProducts = document.createElement("a");
   aProducts.href = "/products";
   aProducts.textContent = "Products";
+  aProducts.onclick = (event) => {
+    event.preventDefault();
+    routes("/products");
+  };
   liProducts.appendChild(aProducts);
 
   const liAbout = document.createElement("li");
   const aAbout = document.createElement("a");
   aAbout.href = "/about";
   aAbout.textContent = "About";
+  aAbout.onclick = (event) => {
+    event.preventDefault();
+    routes("/about", event);
+  };
   liAbout.appendChild(aAbout);
 
   const liMaraisa = document.createElement("li");
   const aMaraisa = document.createElement("a");
   aMaraisa.href = "/maraisa";
   aMaraisa.textContent = "Maraisa";
+  aMaraisa.onclick = (event) => {
+    event.preventDefault();
+    routes("/maraisa", event);
+  };
   liMaraisa.appendChild(aMaraisa);
 
   const liCopyright = document.createElement("li");
   const aCopyright = document.createElement("a");
   aCopyright.href = "/copyright";
   aCopyright.textContent = "Copyright";
+  aCopyright.onclick = (event) => {
+    event.preventDefault();
+    routes("/copyright", event);
+  };
   liCopyright.appendChild(aCopyright);
 
   const liShopping = document.createElement("li");
@@ -54,6 +75,10 @@ const Header = () => {
   const shoppingImg = document.createElement("img");
   shoppingImg.src = "/Logos/AñadirCesta.png";
   shoppingImg.alt = "Cesta de Compras";
+  aShopping.onclick = (event) => {
+    event.preventDefault();
+    routes("/shopping", event);
+  };
   aShopping.appendChild(shoppingImg);
   liShopping.appendChild(aShopping);
 
@@ -63,6 +88,10 @@ const Header = () => {
   const favoritesImg = document.createElement("img");
   favoritesImg.src = "/Logos/CorazonLleno.png";
   favoritesImg.alt = "Favoritos";
+  aFavorites.onclick = (event) => {
+    event.preventDefault();
+    routes("/favorites", event);
+  };
   aFavorites.appendChild(favoritesImg);
   liFavorites.appendChild(aFavorites);
 
@@ -100,10 +129,10 @@ const navWrapper = document.getElementById("nav");
 
 toggleButton.addEventListener("click", () => {
   toggleButton.classList.toggle("close");
-  navWrapper.classList.toggle("show")
+  navWrapper.classList.toggle("show");
 });
 
-navWrapper.addEventListener("click", e => {
+navWrapper.addEventListener("click", (e) => {
   if (e.target.id === "nav") {
     navWrapper.classList.remove("show");
     toggleButton.classList.remove("close");

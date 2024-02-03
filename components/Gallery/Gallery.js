@@ -38,18 +38,24 @@ export const galleryTemplate = (products) => {
     divBtnsProduct.classList = "divBtnsProduct";
 
     const favoriteBtn = document.createElement("button");
-    favoriteBtn.id = "favoriteBtn";
+    favoriteBtn.id = "favoriteBtn-" + product.id;
     favoriteBtn.classList = "favoriteBtn";
     const favoriteImg = document.createElement("img");
     favoriteImg.src = "/Logos/CorazonLleno.png";
     favoriteImg.alt = "Añadir a Favoritos";
+    favoriteBtn.addEventListener("click", () => {
+      console.log("hago click en el botón de favoritos")
+    });
 
     const shoppingBtn = document.createElement("button");
-    shoppingBtn.id = "shoppingBtn";
+    shoppingBtn.id = "shoppingBtn-"+  + product.id;
     shoppingBtn.classList = "shoppingBtn";
     const shoppingImg = document.createElement("img");
     shoppingImg.src = "/Logos/AñadirCesta.png";
     shoppingImg.alt = "Añadir a Cesta";
+    shoppingBtn.addEventListener("click", () => {
+      console.log("hago click en el botón de shoping")
+    });
 
     cardProduct.appendChild(nameProduct);
     cardProduct.appendChild(divImgProduct);
@@ -68,6 +74,7 @@ export const galleryTemplate = (products) => {
   return productsGallery;
 };
 
+
 export const gallery = () => {
   return `
       <div id="gallery" class="gallery">
@@ -76,33 +83,53 @@ export const gallery = () => {
         `;
 };
 
-export const toggleFavorite = (element) => {
+
+const toggleFavorite = (event) => {
+  
+  console.log(event);
+  console.log("togglefavorite ejecutada");
+
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  const cardProduct = element.parentElement.parentElement.id;
+  // const favoriteProduct = event.target.closest(".cardProduct").id;
+  const favoriteProduct = event.target.id.split("-")[1];
 
-  console.log(cardProduct);
+  console.log(favoriteProduct);
 
-  if (favorites.includes(cardProduct)) {
-    favorites = favorites.filter((item) => item !== cardProduct);
+  if (favorites.includes(favoriteProduct)) {
+    favorites = favorites.filter((item) => item !== favoriteProduct);
   } else {
-    favorites.push(cardProduct);
+    favorites.push(favoriteProduct);
   }
 
   localStorage.setItem("favorites", JSON.stringify(favorites));
+  console.log(favorites);
 };
 
-export const toggleShopping = (element) => {
+
+const toggleShopping = (event) => {
   let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
 
-  const cardProduct = element.parentElement.parentElement.id;
+  // const shoppingProduct = event.target.closest(".cardProduct").id;
+  const shoppingProduct = event.target.id.split("-")[1];
 
-  console.log(cardProduct);
+  console.log(shoppingProduct);
 
-  if (shopping.includes(cardProduct)) {
-    shopping = shopping.filter((item) => item !== cardProduct);
+  if (shopping.includes(shoppingProduct)) {
+    shopping = shopping.filter((item) => item !== shoppingProduct);
   } else {
-    shopping.push(cardProduct);
+    shopping.push(shoppingProduct);
   }
   localStorage.setItem("shopping", JSON.stringify(shopping));
 };
+
+
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("favoriteBtn")) {
+    toggleFavorite(event);
+  }
+
+  if (event.target.classList.contains("shoppingBtn")) {
+    toggleShopping(event);
+  }
+});
