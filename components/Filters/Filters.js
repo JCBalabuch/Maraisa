@@ -28,6 +28,8 @@ const createNameFilter = () => {
   nameFilterInput.type = "text";
   nameFilterInput.id = "nameFilter";
   nameFilterInput.placeholder = "Buscar por nombre";
+  nameFilterInput.addEventListener("input", filterProducts);
+  // console.log(nameFilterInput.value);
 
   return nameFilterInput;
 };
@@ -45,9 +47,11 @@ const createCategoryFilter = () => {
 
   fillCategories(categoryFilterSelect);
 
-  categoryFilterSelect.addEventListener("change", () => {
-    console.log(categoryFilterSelect.value);
-  });
+  // categoryFilterSelect.addEventListener("change", () => {
+  //   console.log(categoryFilterSelect.value);
+  // });
+  
+  categoryFilterSelect.addEventListener("change", filterProducts);
 
   return categoryFilterSelect;
 };
@@ -57,6 +61,7 @@ const createPriceFilter = () => {
   priceFilterInput.type = "number";
   priceFilterInput.id = "priceFilter";
   priceFilterInput.placeholder = "Precio máximo $";
+  priceFilterInput.addEventListener("input", filterProducts)
 
   return priceFilterInput;
 };
@@ -73,6 +78,8 @@ const createStateFilter = () => {
 
   fillStateSelect(stateFilterSelect);
 
+  stateFilterSelect.addEventListener("change", filterProducts)
+
   return stateFilterSelect;
 };
 
@@ -80,6 +87,7 @@ const createClearFiltersButton = () => {
   const clearFiltersButton = document.createElement("button");
   clearFiltersButton.id = "clearFilters";
   clearFiltersButton.textContent = "Limpiar filtros";
+  clearFiltersButton.addEventListener("click", clearFilters)
 
   return clearFiltersButton;
 };
@@ -148,3 +156,21 @@ export const filterProducts = () => {
 
   productsGallery.appendChild(galleryTemplate(filteredProducts));
 };
+
+// if (filtersTemplate) {
+//   document
+//     .getElementById("nameFilter")
+//     .addEventListener("input", filterProducts);
+//   document
+//     .getElementById("categoryFilter")
+//     .addEventListener("change", filterProducts);
+//   document
+//     .getElementById("stateFilter")
+//     .addEventListener("change", filterProducts);
+//   document
+//     .getElementById("priceFilter")
+//     .addEventListener("input", filterProducts);
+//   document
+//     .getElementById("clearFilters")
+//     .addEventListener("click", clearFilters);
+// }

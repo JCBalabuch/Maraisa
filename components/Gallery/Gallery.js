@@ -43,19 +43,19 @@ export const galleryTemplate = (products) => {
     const favoriteImg = document.createElement("img");
     favoriteImg.src = "/Logos/CorazonLleno.png";
     favoriteImg.alt = "Añadir a Favoritos";
-    favoriteBtn.addEventListener("click", () => {
-      console.log("hago click en el botón de favoritos")
-    });
+    // favoriteBtn.addEventListener("click", () => {
+    //   console.log("hago click en el botón de favoritos")
+    // });
 
     const shoppingBtn = document.createElement("button");
-    shoppingBtn.id = "shoppingBtn-"+  + product.id;
+    shoppingBtn.id = "shoppingBtn-"+ product.id;
     shoppingBtn.classList = "shoppingBtn";
     const shoppingImg = document.createElement("img");
     shoppingImg.src = "/Logos/AñadirCesta.png";
     shoppingImg.alt = "Añadir a Cesta";
-    shoppingBtn.addEventListener("click", () => {
-      console.log("hago click en el botón de shoping")
-    });
+    // shoppingBtn.addEventListener("click", () => {
+    //   console.log("hago click en el botón de shoping")
+    // });
 
     cardProduct.appendChild(nameProduct);
     cardProduct.appendChild(divImgProduct);
@@ -88,14 +88,12 @@ const toggleFavorite = (event) => {
   
   console.log(event);
   console.log("togglefavorite ejecutada");
-
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   // const favoriteProduct = event.target.closest(".cardProduct").id;
   const favoriteProduct = event.target.id.split("-")[1];
 
   console.log(favoriteProduct);
-
   if (favorites.includes(favoriteProduct)) {
     favorites = favorites.filter((item) => item !== favoriteProduct);
   } else {
