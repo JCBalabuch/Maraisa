@@ -1,6 +1,48 @@
 import { PRODUCTS } from "../../Data/Data";
 import "./Gallery.css";
 
+
+export const toggleFavorite = (element) => {
+  
+  console.log(event);
+  console.log("togglefavorite ejecutada");
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  // const favoriteProduct = event.target.closest(".cardProduct").id;
+  // const favoriteProduct = event.target.id.split("-")[1];
+  const favoriteProduct = element.parentElement.parentElement.id;
+
+  console.log(favoriteProduct);
+  if (favorites.includes(favoriteProduct)) {
+    favorites = favorites.filter((item) => item !== favoriteProduct);
+  } else {
+    favorites.push(favoriteProduct);
+  }
+
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  console.log(favorites);
+};
+
+
+export const toggleShopping = (element) => {
+  let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
+
+  // const shoppingProduct = event.target.closest(".cardProduct").id;
+  // const shoppingProduct = event.target.id.split("-")[1];
+  const shoppingProduct = element.parentElement.parentElement.id;
+
+  console.log(shoppingProduct);
+
+  if (shopping.includes(shoppingProduct)) {
+    shopping = shopping.filter((item) => item !== shoppingProduct);
+  } else {
+    shopping.push(shoppingProduct);
+  }
+  localStorage.setItem("shopping", JSON.stringify(shopping));
+};
+
+
+
 export const galleryTemplate = (products) => {
   const productsGallery = document.createElement("div");
   productsGallery.id = "productsGallery";
@@ -43,6 +85,7 @@ export const galleryTemplate = (products) => {
     const favoriteImg = document.createElement("img");
     favoriteImg.src = "/Logos/CorazonLleno.png";
     favoriteImg.alt = "Añadir a Favoritos";
+    favoriteBtn.addEventListener("click", toggleFavorite);
     // favoriteBtn.addEventListener("click", () => {
     //   console.log("hago click en el botón de favoritos")
     // });
@@ -53,6 +96,7 @@ export const galleryTemplate = (products) => {
     const shoppingImg = document.createElement("img");
     shoppingImg.src = "/Logos/AñadirCesta.png";
     shoppingImg.alt = "Añadir a Cesta";
+    shoppingBtn.addEventListener("click", toggleShopping);
     // shoppingBtn.addEventListener("click", () => {
     //   console.log("hago click en el botón de shoping")
     // });
@@ -71,6 +115,7 @@ export const galleryTemplate = (products) => {
     ulProductsGallery.appendChild(liProduct);
   });
   productsGallery.appendChild(ulProductsGallery);
+
   return productsGallery;
 };
 
@@ -78,56 +123,23 @@ export const galleryTemplate = (products) => {
 export const gallery = () => {
   return `
       <div id="gallery" class="gallery">
-        ${galleryTemplate(PRODUCTS).outerHTML}
+      ${galleryTemplate(PRODUCTS).outerHTML}
       </div>
         `;
 };
 
 
-const toggleFavorite = (event) => {
-  
-  console.log(event);
-  console.log("togglefavorite ejecutada");
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-  // const favoriteProduct = event.target.closest(".cardProduct").id;
-  const favoriteProduct = event.target.id.split("-")[1];
-
-  console.log(favoriteProduct);
-  if (favorites.includes(favoriteProduct)) {
-    favorites = favorites.filter((item) => item !== favoriteProduct);
-  } else {
-    favorites.push(favoriteProduct);
-  }
-
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  console.log(favorites);
-};
 
 
-const toggleShopping = (event) => {
-  let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
-
-  // const shoppingProduct = event.target.closest(".cardProduct").id;
-  const shoppingProduct = event.target.id.split("-")[1];
-
-  console.log(shoppingProduct);
-
-  if (shopping.includes(shoppingProduct)) {
-    shopping = shopping.filter((item) => item !== shoppingProduct);
-  } else {
-    shopping.push(shoppingProduct);
-  }
-  localStorage.setItem("shopping", JSON.stringify(shopping));
-};
 
 
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("favoriteBtn")) {
-    toggleFavorite(event);
-  }
 
-  if (event.target.classList.contains("shoppingBtn")) {
-    toggleShopping(event);
-  }
-});
+// document.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("favoriteBtn")) {
+//     toggleFavorite(event);
+//   }
+
+//   if (event.target.classList.contains("shoppingBtn")) {
+//     toggleShopping(event);
+//   }
+// });
