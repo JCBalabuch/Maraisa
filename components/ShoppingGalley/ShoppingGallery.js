@@ -31,7 +31,7 @@ export const ShpGallery = (product) => {
 
     const quantityProduct = document.createElement("input");
     quantityProduct.type = "number";
-    quantityProduct.id = "quantityProduct";
+    // quantityProduct.id = "quantityProduct";
     quantityProduct.classList = "quantityProduct";
     quantityProduct.min = 1;
     quantityProduct.value = 1;
@@ -41,11 +41,11 @@ export const ShpGallery = (product) => {
     totalByProductDiv.classList = "priceItemDiv";
 
     const totalByProduct = document.createElement("h4");
-    totalByProduct.id = "totalByProduct"
+    // totalByProduct.id = "totalByProduct"
     totalByProduct.classList = "totalByProduct"
     // totalByProduct.textContent = parseFloat(priceItemShp.textContent) * parseFloat(quantityProduct.value);
 
-    console.log(totalByProduct.textContent);
+    // console.log(totalByProduct.textContent);
 
     const totalByProduct$ = document.createElement("h4");
     totalByProduct$.textContent = "$";
@@ -55,7 +55,7 @@ export const ShpGallery = (product) => {
 
     const favoriteBtn = document.createElement("button");
     favoriteBtn.id = "favoriteBtn";
-    favoriteBtn.classList = "favoriteBtnFav favoriteBtnShp";
+    favoriteBtn.classList = "favoriteBtn";
     const favoriteImg = document.createElement("img");
     favoriteImg.src = "/Logos/CorazonLleno.png";
     favoriteImg.alt = "Añadir a Favoritos";
@@ -97,16 +97,4 @@ export const ShpGallery = (product) => {
     itemShp.appendChild(divBtnsItems);
 
     return itemShp
-}
-
-
-export const calcSubTotalProduct = () => {
-    const priceItemShp = document.getElementById("priceItem").textContent;
-    const quantityProduct = document.getElementById("quantityProduct").value;
-    const total = parseFloat(priceItemShp) * parseFloat(quantityProduct);
-    const totalByProduct = document.getElementById("totalByProduct");
-    totalByProduct.textContent = total + "$";
-        console.log(quantityProduct.value);
-}
-
-// calcSubTotalProduct()
+};

@@ -1,9 +1,12 @@
+import { router } from "../../Router/Router";
 import "./Header.css";
 
-const Header = () => {
+export const Header = () => {
   const header = document.createElement("div");
   header.classList.add("header");
 
+
+  // Header Logo
   const headerLogo = document.createElement("div");
   headerLogo.classList = "headerLogo";
 
@@ -14,6 +17,8 @@ const Header = () => {
   headerLogo.appendChild(headerLogoImg);
   header.appendChild(headerLogo);
 
+
+  // Header Nav
   const nav = document.createElement("nav");
   nav.id = "nav";
   const ul = document.createElement("ul");
@@ -87,6 +92,18 @@ const Header = () => {
   header.appendChild(hambMenu);
   header.appendChild(nav);
 
+  // Handlers
+
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      const href = link.getAttribute("href");
+      history.pushState(null, null, href);
+      router();
+    });
+  });
+
   return header;
 };
 
@@ -94,6 +111,9 @@ const header = document.querySelector("header");
 header.appendChild(Header());
 
 export default Header;
+
+
+// Hamb Menu
 
 const toggleButton = document.getElementById("hambMenu");
 const navWrapper = document.getElementById("nav");

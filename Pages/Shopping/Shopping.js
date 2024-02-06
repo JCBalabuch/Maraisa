@@ -8,6 +8,7 @@ const shoppingsStorage = () => {
 }
 
 const getShoppingGallery = () => {
+  // Elements
   const shoppingGallery = document.createElement("div");
   shoppingGallery.classList = "shoppingGallery";
 
@@ -27,7 +28,6 @@ const getShoppingGallery = () => {
   shoppingGalleryUl.innerHTML = "";
   let shoppingProducts = [];
 
-  // let shoppingInStorage = JSON.parse(localStorage.getItem("shopping")) || [];
   const shoppingInStorage = localStorage.getItem("shopping");
 
   if (shoppingInStorage) {
@@ -41,8 +41,6 @@ const getShoppingGallery = () => {
     totalPurchaseName.style.display = "none";
     totalPurchase.style.display = "none";
   };
-
-  console.log(shoppingProducts);
 
   const fragment = document.createDocumentFragment();
 

@@ -1,6 +1,14 @@
 import { PRODUCTS } from "../../Data/Data";
 import "./Gallery.css";
 
+export const gallery = () => {
+  return `
+      <div id="gallery" class="gallery">
+        ${galleryTemplate(PRODUCTS).outerHTML}
+      </div>
+        `;
+};
+
 export const galleryTemplate = (products) => {
   const productsGallery = document.createElement("div");
   productsGallery.id = "productsGallery";
@@ -38,14 +46,14 @@ export const galleryTemplate = (products) => {
     divBtnsProduct.classList = "divBtnsProduct";
 
     const favoriteBtn = document.createElement("button");
-    favoriteBtn.id = "favoriteBtn";
+    favoriteBtn.id = "favoriteBtn" + product.id;
     favoriteBtn.classList = "favoriteBtn";
     const favoriteImg = document.createElement("img");
     favoriteImg.src = "/Logos/CorazonLleno.png";
     favoriteImg.alt = "Añadir a Favoritos";
 
     const shoppingBtn = document.createElement("button");
-    shoppingBtn.id = "shoppingBtn";
+    shoppingBtn.id = "shoppingBtn" + product.id;
     shoppingBtn.classList = "shoppingBtn";
     const shoppingImg = document.createElement("img");
     shoppingImg.src = "/Logos/AñadirCesta.png";
@@ -68,20 +76,12 @@ export const galleryTemplate = (products) => {
   return productsGallery;
 };
 
-export const gallery = () => {
-  return `
-      <div id="gallery" class="gallery">
-        ${galleryTemplate(PRODUCTS).outerHTML}
-      </div>
-        `;
-};
 
 export const toggleFavorite = (element) => {
+
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   const cardProduct = element.parentElement.parentElement.id;
-
-  console.log(cardProduct);
 
   if (favorites.includes(cardProduct)) {
     favorites = favorites.filter((item) => item !== cardProduct);
@@ -96,8 +96,6 @@ export const toggleShopping = (element) => {
   let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
 
   const cardProduct = element.parentElement.parentElement.id;
-
-  console.log(cardProduct);
 
   if (shopping.includes(cardProduct)) {
     shopping = shopping.filter((item) => item !== cardProduct);

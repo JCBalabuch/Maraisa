@@ -38,7 +38,7 @@ export const favGallery = (product) => {
 
     const shoppingBtn = document.createElement("button");
     shoppingBtn.id = "shoppingBtn";
-    shoppingBtn.classList = "shoppingBtnFav shoppingBtnShp";
+    shoppingBtn.classList = "shoppingBtn";
     const shoppingImg = document.createElement("img");
     shoppingImg.src = "/Logos/AñadirCesta.png";
     shoppingImg.alt = "Añadir a Cesta";

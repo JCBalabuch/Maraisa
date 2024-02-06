@@ -3,7 +3,7 @@ import { Copyright } from "../Pages/Copyright/Copyright";
 import Favorites from "../Pages/Favorites/Favorites";
 import Home from "../Pages/Home/Home";
 import { Maraisa } from "../Pages/Maraisa/Maraisa";
-import Products from "../Pages/Products/Products";
+import { Products } from "../Pages/Products/Products";
 import Shopping from "../Pages/Shopping/Shopping";
 
 

@@ -67,8 +67,8 @@
     margin-right: var(--mtv-margin-m);
 }
 
-#shoppingBtn,
-#favoriteBtn,
+.shoppingBtn,
+.favoriteBtn,
 .removeBtn {
     background-color: var(--mtv-bg-primary);
     border-radius: var(--mtv-bradius);
@@ -81,4 +81,5 @@
 .favoriteBtn:hover,
 .removeBtn:hover {
     background-color: var(--mtv-bg-button-hover2);
+    transform: scale(1.05);
 }
