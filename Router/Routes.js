@@ -5,6 +5,8 @@ import Home from "../Pages/Home/Home";
 import { Maraisa } from "../Pages/Maraisa/Maraisa";
 import { Products } from "../Pages/Products/Products";
 import Shopping from "../Pages/Shopping/Shopping";
+import { ShoppingHandlers } from "../Pages/Shopping/ShoppingHandler";
+
 
 
 export const routes = [
@@ -35,5 +37,6 @@ export const routes = [
   {
     path: "/shopping",
     component: Shopping,
+    handler: ShoppingHandlers,
   },
 ];

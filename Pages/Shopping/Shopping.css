@@ -27,10 +27,24 @@
   display: flex;
   gap: var(--mtv-gap-m);
   justify-content: flex-end;
-  margin-right: 180px;
+  margin-right: 80px;
   font-weight: bolder;
 }
 
-/* .shoppingBtnShp {
-    display: none;
-} */
+.purchaseBtn {
+  font-weight: bolder;
+  font-size: var(--mtv-fontsize-h5);
+  cursor: pointer;
+}
+
+.purchaseBtn:hover {
+  transform: scale(1.05);
+}
+
+.purchaseMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: var(--mtv-fontsize-h2);
+}

@@ -2,27 +2,32 @@ import "./Shopping.css";
 import { PRODUCTS } from "../../Data/Data";
 import { ShpGallery } from "../../components/ShoppingGalley/ShoppingGallery";
 
-const shoppingsStorage = () => {
+export const shoppingsStorage = () => {
   const shoppingGallery = getShoppingGallery();
   return shoppingGallery;
 }
 
-const getShoppingGallery = () => {
+export const getShoppingGallery = () => {
   // Elements
   const shoppingGallery = document.createElement("div");
   shoppingGallery.classList = "shoppingGallery";
 
   const totalPurchaseDiv = document. createElement("div");
-  totalPurchaseDiv.className = ("totalPurchaseDiv");
+  totalPurchaseDiv.classList = ("totalPurchaseDiv");
 
   const totalPurchaseName = document.createElement("h3");
-  totalPurchaseName.className = "totalPurchaseName";
+  totalPurchaseName.classList = "totalPurchaseName";
   totalPurchaseName.innerText = "TOTAL";
 
   const totalPurchase = document.createElement("h3");
   totalPurchase.id = "totalPurchase";
-  totalPurchase.className = "totalPurchase";
+  totalPurchase.classList = "totalPurchase";
   totalPurchase.innerText = "0$";
+
+  const purchaseBtn = document.createElement("button");
+  purchaseBtn.id = "purchaseBtn";
+  purchaseBtn.classList = "purchaseBtn";
+  purchaseBtn.textContent = "Comprar";
 
   const shoppingGalleryUl = document.createElement("ul");
   shoppingGalleryUl.innerHTML = "";
@@ -40,6 +45,7 @@ const getShoppingGallery = () => {
     shoppingGalleryUl.appendChild(noShoppingMessage);
     totalPurchaseName.style.display = "none";
     totalPurchase.style.display = "none";
+    purchaseBtn.style.display = "none";
   };
 
   const fragment = document.createDocumentFragment();
@@ -51,6 +57,7 @@ const getShoppingGallery = () => {
 
   totalPurchaseDiv.appendChild(totalPurchaseName);
   totalPurchaseDiv.appendChild(totalPurchase);
+  totalPurchaseDiv.appendChild(purchaseBtn);
 
   shoppingGalleryUl.appendChild(fragment);
   shoppingGallery.appendChild(shoppingGalleryUl);

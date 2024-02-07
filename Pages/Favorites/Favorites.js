@@ -27,8 +27,6 @@ const getFavoriteGallery = () => {
     favoritesGalleryUl.appendChild(noFavoritesMessage);
   }
 
-  console.log(favoriteProducts);
-
   const fragment = document.createDocumentFragment();
 
   favoriteProducts.forEach((product) => {

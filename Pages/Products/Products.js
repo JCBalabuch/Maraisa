@@ -214,7 +214,7 @@ const filterProducts = () => {
 };
 
 // Card Listeners
-const buttonsAddListeners = () => {
+export const buttonsAddListeners = () => {
   let favoriteBtns = document.querySelectorAll(".favoriteBtn");
   favoriteBtns.forEach((favoriteBtn) =>
     favoriteBtn.addEventListener("click", () => {

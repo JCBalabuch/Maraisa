@@ -21,49 +21,46 @@ export const favGallery = (product) => {
     priceItemFavShp.textContent = product.price;
     priceItemFavShp.textContent += "$";
 
-    // const quantityProduct = document.createElement("input");
-    // quantityProduct.type = "number";
-    // quantityProduct.id = "quantityProduct";
-    // quantityProduct.classList = "quantityProductFavorites quantityProductShopping";
-
     const divBtnsItems = document.createElement("div");
     divBtnsItems.classList = "divBtnsItems";
 
-    // const favoriteBtn = document.createElement("button");
-    // favoriteBtn.id = "favoriteBtn";
-    // favoriteBtn.classList = "favoriteBtnFav favoriteBtnShp";
-    // const favoriteImg = document.createElement("img");
-    // favoriteImg.src = "/Logos/CorazonLleno.png";
-    // favoriteImg.alt = "Añadir a Favoritos";
-
-    const shoppingBtn = document.createElement("button");
-    shoppingBtn.id = "shoppingBtn";
-    shoppingBtn.classList = "shoppingBtn";
-    const shoppingImg = document.createElement("img");
-    shoppingImg.src = "/Logos/AñadirCesta.png";
-    shoppingImg.alt = "Añadir a Cesta";
-
     const removeBtn = document.createElement("button");
-    removeBtn.id = "removeBtn";
-    removeBtn.classList = "removeBtn";
+    removeBtn.classList = "removeBtnFav";
     const removeImg = document.createElement("img");
     removeImg.src = "/Logos/eliminar.png";
     removeImg.alt = "Eliminar";
 
-    // favoriteBtn.appendChild(favoriteImg);
-    shoppingBtn.appendChild(shoppingImg);
     removeBtn.appendChild(removeImg);
 
-    // divBtnsItems.appendChild(favoriteBtn);
-    divBtnsItems.appendChild(shoppingBtn);
     divBtnsItems.appendChild(removeBtn);
 
     divImageItemFavShp.appendChild(imageItemFavShp);
     itemFavShp.appendChild(divImageItemFavShp);
     itemFavShp.appendChild(nameItemFavShp);
     itemFavShp.appendChild(priceItemFavShp);
-    // itemFavShp.appendChild(quantityProduct);
     itemFavShp.appendChild(divBtnsItems);
+
+    removeButtonsAddListeners();
 
     return itemFavShp
 }
+
+export const removeButtonsAddListeners = () => {
+    const removeBtns = document.querySelectorAll(".removeBtnFav");
+    removeBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        deleteItem(this, "favorites");
+      });
+    });
+  };
+  
+  export const deleteItem = (element, arrayName) => {
+    const cardProduct = element.parentElement.parentElement.id;
+    let array = JSON.parse(localStorage.getItem(arrayName)) || [];
+  
+    array = array.filter((item) => item !== cardProduct);
+  
+    localStorage.setItem(arrayName, JSON.stringify(array));
+  
+    favGallery(array)
+  };

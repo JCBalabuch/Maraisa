@@ -51,6 +51,7 @@ export const galleryTemplate = (products) => {
     const favoriteImg = document.createElement("img");
     favoriteImg.src = "/Logos/CorazonLleno.png";
     favoriteImg.alt = "Añadir a Favoritos";
+    favoriteImg.classList = "favoriteImg";
 
     const shoppingBtn = document.createElement("button");
     shoppingBtn.id = "shoppingBtn" + product.id;
@@ -58,6 +59,7 @@ export const galleryTemplate = (products) => {
     const shoppingImg = document.createElement("img");
     shoppingImg.src = "/Logos/AñadirCesta.png";
     shoppingImg.alt = "Añadir a Cesta";
+    shoppingImg.classList = "shoppingImg";
 
     cardProduct.appendChild(nameProduct);
     cardProduct.appendChild(divImgProduct);
@@ -81,12 +83,18 @@ export const toggleFavorite = (element) => {
 
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
+    // Select id Parent Element
   const cardProduct = element.parentElement.parentElement.id;
 
+    // Select button image
+    const favoriteImg = element.querySelector(".favoriteImg")
+
   if (favorites.includes(cardProduct)) {
-    favorites = favorites.filter((item) => item !== cardProduct);
+    favorites = favorites.filter((item) => item !== cardProduct); // Remove product from Local Storage
+    favoriteImg.style.filter = "";  // Restore the original color of the button
   } else {
-    favorites.push(cardProduct);
+    favorites.push(cardProduct); // Push product to local storage
+    favoriteImg.style.filter = "hue-rotate(180deg)"; // change button color to red
   }
 
   localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -95,12 +103,18 @@ export const toggleFavorite = (element) => {
 export const toggleShopping = (element) => {
   let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
 
+  // Select id Parent Element
   const cardProduct = element.parentElement.parentElement.id;
 
+  // Select button image
+  const shoppingImg = element.querySelector(".shoppingImg")
+
   if (shopping.includes(cardProduct)) {
-    shopping = shopping.filter((item) => item !== cardProduct);
+    shopping = shopping.filter((item) => item !== cardProduct); // Remove product from Local Storage
+    shoppingImg.style.filter = "";  // Restore the original color of the button
   } else {
-    shopping.push(cardProduct);
+    shopping.push(cardProduct); // Push product to local storage
+    shoppingImg.style.filter = "hue-rotate(180deg)"; // change button color to red
   }
-  localStorage.setItem("shopping", JSON.stringify(shopping));
+  localStorage.setItem("shopping", JSON.stringify(shopping)); 
 };

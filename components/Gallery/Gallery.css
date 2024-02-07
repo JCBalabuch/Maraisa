@@ -69,7 +69,8 @@
 
 .shoppingBtn,
 .favoriteBtn,
-.removeBtn {
+.removeBtnShp,
+.removeBtnFav {
     background-color: var(--mtv-bg-primary);
     border-radius: var(--mtv-bradius);
     padding: var(--mtv-padding-ss);
@@ -79,7 +80,8 @@
 
 .shoppingBtn:hover,
 .favoriteBtn:hover,
-.removeBtn:hover {
+.removeBtnShp:hover,
+.removeBtnFav:hover {
     background-color: var(--mtv-bg-button-hover2);
     transform: scale(1.05);
 }

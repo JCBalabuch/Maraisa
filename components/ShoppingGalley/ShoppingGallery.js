@@ -1,100 +1,98 @@
 import "./ShoppingGallery.css";
 
 export const ShpGallery = (product) => {
+  const itemShp = document.createElement("li");
+  itemShp.id = `${product.id}`;
+  itemShp.classList = "itemShp";
 
-    const itemShp = document.createElement("li");
-    itemShp.id = `${product.id}`;
-    itemShp.classList = "itemShp";
+  const divImageItemShp = document.createElement("div");
+  divImageItemShp.classList = "divImageItemShp";
 
-    const divImageItemShp = document.createElement("div");
-    divImageItemShp.classList = "divImageItemShp";
+  const imageItemShp = document.createElement("img");
+  imageItemShp.classList = "imageItemShp";
+  imageItemShp.src = product.image;
+  imageItemShp.alt = product.name;
 
-    const imageItemShp = document.createElement("img");
-    imageItemShp.classList = "imageItemShp";
-    imageItemShp.src = product.image;
-    imageItemShp.alt = product.name;
+  const nameItemShp = document.createElement("h3");
+  nameItemShp.textContent = product.name;
 
-    const nameItemShp = document.createElement("h3");
-    nameItemShp.textContent = product.name;
+  const priceItemDiv = document.createElement("div");
+  priceItemDiv.classList = "priceItemDiv";
 
-    const priceItemDiv = document.createElement("div")
-    priceItemDiv.classList = "priceItemDiv";
+  const priceItemShp = document.createElement("h4");
+  priceItemShp.id = "priceItem";
+  priceItemShp.textContent = parseFloat(product.price);
 
-    const priceItemShp = document.createElement("h4");
-    priceItemShp.id = "priceItem";
-    priceItemShp.textContent = parseFloat(product.price);
+  const priceItemShp$ = document.createElement("h4");
+  priceItemShp$.textContent = " $";
 
-    const priceItemShp$ = document.createElement("h4");
-    priceItemShp$.textContent = "$";
+  const quantityProduct = document.createElement("input");
+  quantityProduct.type = "number";
+  quantityProduct.id = "quantityProduct";
+  quantityProduct.classList = "quantityProduct";
+  quantityProduct.min = 1;
+  quantityProduct.value = 1;
 
-    console.log(priceItemShp.textContent);
+  const totalByProductDiv = document.createElement("div");
+  totalByProductDiv.classList = "priceItemDiv";
 
-    const quantityProduct = document.createElement("input");
-    quantityProduct.type = "number";
-    // quantityProduct.id = "quantityProduct";
-    quantityProduct.classList = "quantityProduct";
-    quantityProduct.min = 1;
-    quantityProduct.value = 1;
-    // quantityProduct.addEventListener("change", calcSubTotalProduct())
-    
-    const totalByProductDiv = document.createElement("div")
-    totalByProductDiv.classList = "priceItemDiv";
+  const totalByProduct = document.createElement("h4");
+  totalByProduct.id = "totalByProduct";
+  totalByProduct.classList = "totalByProduct";
 
-    const totalByProduct = document.createElement("h4");
-    // totalByProduct.id = "totalByProduct"
-    totalByProduct.classList = "totalByProduct"
-    // totalByProduct.textContent = parseFloat(priceItemShp.textContent) * parseFloat(quantityProduct.value);
+  const totalByProduct$ = document.createElement("h4");
+  totalByProduct$.textContent = " $";
 
-    // console.log(totalByProduct.textContent);
+  const divBtnsItems = document.createElement("div");
+  divBtnsItems.classList = "divBtnsItems";
 
-    const totalByProduct$ = document.createElement("h4");
-    totalByProduct$.textContent = "$";
+  const removeBtn = document.createElement("button");
+  removeBtn.classList = "removeBtnShp";
+  const removeImg = document.createElement("img");
+  removeImg.src = "/Logos/eliminar.png";
+  removeImg.alt = "Eliminar";
 
-    const divBtnsItems = document.createElement("div");
-    divBtnsItems.classList = "divBtnsItems";
+  removeBtn.appendChild(removeImg);
 
-    const favoriteBtn = document.createElement("button");
-    favoriteBtn.id = "favoriteBtn";
-    favoriteBtn.classList = "favoriteBtn";
-    const favoriteImg = document.createElement("img");
-    favoriteImg.src = "/Logos/CorazonLleno.png";
-    favoriteImg.alt = "Añadir a Favoritos";
+  divBtnsItems.appendChild(removeBtn);
 
-    // const shoppingBtn = document.createElement("button");
-    // shoppingBtn.id = "shoppingBtn";
-    // shoppingBtn.classList = "shoppingBtnFav shoppingBtnShp";
-    // const shoppingImg = document.createElement("img");
-    // shoppingImg.src = "/Logos/AñadirCesta.png";
-    // shoppingImg.alt = "Añadir a Cesta";
+  priceItemDiv.appendChild(priceItemShp);
+  priceItemDiv.appendChild(priceItemShp$);
 
-    const removeBtn = document.createElement("button");
-    removeBtn.id = "removeBtn";
-    removeBtn.classList = "removeBtn";
-    const removeImg = document.createElement("img");
-    removeImg.src = "/Logos/eliminar.png";
-    removeImg.alt = "Eliminar";
+  totalByProductDiv.appendChild(totalByProduct);
+  totalByProductDiv.appendChild(totalByProduct$);
 
-    favoriteBtn.appendChild(favoriteImg);
-    // shoppingBtn.appendChild(shoppingImg);
-    removeBtn.appendChild(removeImg);
+  divImageItemShp.appendChild(imageItemShp);
+  itemShp.appendChild(divImageItemShp);
+  itemShp.appendChild(nameItemShp);
+  itemShp.appendChild(priceItemDiv);
+  itemShp.appendChild(quantityProduct);
+  itemShp.appendChild(totalByProductDiv);
+  itemShp.appendChild(divBtnsItems);
 
-    divBtnsItems.appendChild(favoriteBtn);
-    // divBtnsItems.appendChild(shoppingBtn);
-    divBtnsItems.appendChild(removeBtn);
+  removeButtonsAddListeners();
 
-    priceItemDiv.appendChild(priceItemShp);
-    priceItemDiv.appendChild(priceItemShp$);
+  return itemShp;
+};
 
-    totalByProductDiv.appendChild(totalByProduct);
-    totalByProductDiv.appendChild(totalByProduct$);
+// Functionality
 
-    divImageItemShp.appendChild(imageItemShp);
-    itemShp.appendChild(divImageItemShp);
-    itemShp.appendChild(nameItemShp);
-    itemShp.appendChild(priceItemDiv);
-    itemShp.appendChild(quantityProduct);
-    itemShp.appendChild(totalByProductDiv);
-    itemShp.appendChild(divBtnsItems);
+export const removeButtonsAddListeners = () => {
+  const removeBtns = document.querySelectorAll(".removeBtnShp");
+  removeBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      deleteItem(this, "shopping");
+    });
+  });
+};
 
-    return itemShp
+export const deleteItem = (element, arrayName) => {
+  const cardProduct = element.parentElement.parentElement.id;
+  let array = JSON.parse(localStorage.getItem(arrayName)) || [];
+
+  array = array.filter((item) => item !== cardProduct);
+
+  localStorage.setItem(arrayName, JSON.stringify(array));
+
+  ShpGallery(array)
 };
