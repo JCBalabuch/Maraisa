@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
-  }
+}
 
 .cardProduct {
   width: auto;
@@ -28,60 +28,60 @@
 }
 
 .cardProduct > h3 {
-    color: var(--mtv-txtColor-secondary);
-    font-size: larger;
-    font-weight: bolder;
-    padding: 0 var(--mtv-padding-s);
-    margin-top: var(--mtv-margin-s);
-    font-size: var(--mtv-fontsize-h3)
+  color: var(--mtv-txtColor-secondary);
+  font-size: larger;
+  font-weight: bolder;
+  padding: 0 var(--mtv-padding-s);
+  margin-top: var(--mtv-margin-s);
+  font-size: var(--mtv-fontsize-h3);
 }
 
 .divImgProduct {
-    width: 100%;
-    height: 200px;
+  width: 100%;
+  height: 200px;
 }
 
 .divImgProduct > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cardProduct > p,
 .cardProduct > h4 {
-    margin-left: var(--mtv-margin-s);
+  margin-left: var(--mtv-margin-s);
 }
 
 .cardProduct > h4 {
-    font-weight: bolder;
-    background-color: var(--mtv-bg-button-default);
-    color: var(--mtv-txtColor-button);
-    width: 25%;
-    text-align: center;
-    border-radius: 50%;
+  font-weight: bolder;
+  background-color: var(--mtv-bg-button-default);
+  color: var(--mtv-txtColor-button);
+  width: 25%;
+  text-align: center;
+  border-radius: 50%;
 }
 
 .divBtnsProduct {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: var(--mtv-margin-m);
+  display: flex;
+  justify-content: flex-end;
+  margin-right: var(--mtv-margin-m);
 }
 
 .shoppingBtn,
 .favoriteBtn,
 .removeBtnShp,
 .removeBtnFav {
-    background-color: var(--mtv-bg-primary);
-    border-radius: var(--mtv-bradius);
-    padding: var(--mtv-padding-ss);
-    border: none;
-    cursor: pointer;
+  background-color: var(--mtv-bg-primary);
+  border-radius: var(--mtv-bradius);
+  padding: var(--mtv-padding-ss);
+  border: none;
+  cursor: pointer;
 }
 
 .shoppingBtn:hover,
 .favoriteBtn:hover,
 .removeBtnShp:hover,
 .removeBtnFav:hover {
-    background-color: var(--mtv-bg-button-hover2);
-    transform: scale(1.05);
+  background-color: var(--mtv-bg-button-hover2);
+  transform: scale(1.05);
 }

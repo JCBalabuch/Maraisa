@@ -1,19 +1,22 @@
 import "./Shopping.css";
 import { PRODUCTS } from "../../Data/Data";
-import { ShpGallery } from "../../components/ShoppingGalley/ShoppingGallery";
+import {
+  ShpGallery,
+  shoppingRemoveButtons,
+} from "../../components/ShoppingGalley/ShoppingGallery";
 
 export const shoppingsStorage = () => {
   const shoppingGallery = getShoppingGallery();
   return shoppingGallery;
-}
+};
 
 export const getShoppingGallery = () => {
   // Elements
   const shoppingGallery = document.createElement("div");
   shoppingGallery.classList = "shoppingGallery";
 
-  const totalPurchaseDiv = document. createElement("div");
-  totalPurchaseDiv.classList = ("totalPurchaseDiv");
+  const totalPurchaseDiv = document.createElement("div");
+  totalPurchaseDiv.classList = "totalPurchaseDiv";
 
   const totalPurchaseName = document.createElement("h3");
   totalPurchaseName.classList = "totalPurchaseName";
@@ -30,6 +33,7 @@ export const getShoppingGallery = () => {
   purchaseBtn.textContent = "Comprar";
 
   const shoppingGalleryUl = document.createElement("ul");
+  shoppingGalleryUl.classList = "shoppingGalleryUl";
   shoppingGalleryUl.innerHTML = "";
   let shoppingProducts = [];
 
@@ -37,7 +41,7 @@ export const getShoppingGallery = () => {
 
   if (shoppingInStorage) {
     shoppingProducts = PRODUCTS.filter((product) =>
-    shoppingInStorage.includes(product.id)
+      shoppingInStorage.includes(product.id)
     );
   } else {
     const noShoppingMessage = document.createElement("p");
@@ -46,12 +50,12 @@ export const getShoppingGallery = () => {
     totalPurchaseName.style.display = "none";
     totalPurchase.style.display = "none";
     purchaseBtn.style.display = "none";
-  };
+  }
 
   const fragment = document.createDocumentFragment();
 
   shoppingProducts.forEach((product) => {
-    const itemFavShp = ShpGallery(product)
+    const itemFavShp = ShpGallery(product);
     fragment.appendChild(itemFavShp);
   });
 
@@ -62,6 +66,8 @@ export const getShoppingGallery = () => {
   shoppingGalleryUl.appendChild(fragment);
   shoppingGallery.appendChild(shoppingGalleryUl);
   shoppingGallery.appendChild(totalPurchaseDiv);
+
+  shoppingRemoveButtons();
 
   return shoppingGallery;
 };

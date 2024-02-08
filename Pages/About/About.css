@@ -1,45 +1,45 @@
 .about {
-    width: 100%;
-    min-height: 75svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--mtv-gap-ss);
+  width: 100%;
+  min-height: 75svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--mtv-gap-ss);
 }
 
 .about h4,
 .about h5 {
-    margin: var(--mtv-margin-s) var(--mtv-margin-l);
-    padding: var(--mtv-padding-s);
-    text-align: center;
+  margin: var(--mtv-margin-s) var(--mtv-margin-l);
+  padding: var(--mtv-padding-s);
+  text-align: center;
 }
 
 .aboutImg {
-    width: 100%;
-    height: 50%;
+  width: 100%;
+  height: 50%;
 }
 
 .aboutImg > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .divBtns {
-    display: flex;
-    justify-content: end;
-    gap: var(--mtv-gap-s);
-    margin: var(--mtv-margin-s);
+  display: flex;
+  justify-content: end;
+  gap: var(--mtv-gap-s);
+  margin: var(--mtv-margin-s);
 }
 
 .openModal {
-    width: 120px;
-  }
+  width: 120px;
+}
 
 @media (750px <= width <= 1440px) {
-    .aboutImg {
-        width: 100%;
-        height: 400px;
-    }
+  .aboutImg {
+    width: 100%;
+    height: 400px;
   }
+}

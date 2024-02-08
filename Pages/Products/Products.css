@@ -22,7 +22,7 @@
   gap: var(--mtv-gap-m);
 }
 
-input, 
+input,
 select {
   width: 180px;
   padding: var(--mtv-padding-s) var(--mtv-padding-ss);
@@ -33,5 +33,5 @@ select {
 input::placeholder,
 input,
 select {
-  color: var(--mtv-color-primary)
+  color: var(--mtv-color-primary);
 }

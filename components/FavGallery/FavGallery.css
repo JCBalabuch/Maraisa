@@ -1,25 +1,25 @@
 .itemFavShp {
-    width: 100%;
-    height: 130px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-top: 1px solid var(--mtv-color-primary);
-    border-bottom: 1px solid var(--mtv-color-primary);
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid var(--mtv-color-primary);
+  border-bottom: 1px solid var(--mtv-color-primary);
 }
 
 .itemFavShp > h3 {
-    width: 50%;
+  width: 50%;
 }
 
 .divImageItemFavShp {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .imageItemFavShp {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--mtv-bradius);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--mtv-bradius);
 }

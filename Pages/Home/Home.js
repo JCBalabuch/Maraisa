@@ -11,7 +11,7 @@ const Home = () => {
         <p>${slogan}</p>
     </div>
 </div>
-  `
-}
+  `;
+};
 
-  export default Home;
+export default Home;

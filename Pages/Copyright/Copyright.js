@@ -9,7 +9,6 @@ import {
 import "./Copyright.css";
 
 export const Copyright = () => {
-
   return `
     <div class="copyright">
       <section class="sections">
@@ -35,6 +34,5 @@ export const Copyright = () => {
     </section>
     <h5>Gracias 🐛</h5>  
     </div>
-  `
+  `;
 };
-

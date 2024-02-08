@@ -7,8 +7,6 @@ import { Products } from "../Pages/Products/Products";
 import Shopping from "../Pages/Shopping/Shopping";
 import { ShoppingHandlers } from "../Pages/Shopping/ShoppingHandler";
 
-
-
 export const routes = [
   {
     path: "/",

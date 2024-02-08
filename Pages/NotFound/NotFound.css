@@ -5,10 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(
-    "https://pbs.twimg.com/media/EcLTNUtXkAknQQQ.png"
-  );
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background-image: url("https://pbs.twimg.com/media/EcLTNUtXkAknQQQ.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

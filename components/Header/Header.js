@@ -5,7 +5,6 @@ export const Header = () => {
   const header = document.createElement("div");
   header.classList.add("header");
 
-
   // Header Logo
   const headerLogo = document.createElement("div");
   headerLogo.classList = "headerLogo";
@@ -16,7 +15,6 @@ export const Header = () => {
 
   headerLogo.appendChild(headerLogoImg);
   header.appendChild(headerLogo);
-
 
   // Header Nav
   const nav = document.createElement("nav");
@@ -112,7 +110,6 @@ header.appendChild(Header());
 
 export default Header;
 
-
 // Hamb Menu
 
 const toggleButton = document.getElementById("hambMenu");
@@ -120,10 +117,10 @@ const navWrapper = document.getElementById("nav");
 
 toggleButton.addEventListener("click", () => {
   toggleButton.classList.toggle("close");
-  navWrapper.classList.toggle("show")
+  navWrapper.classList.toggle("show");
 });
 
-navWrapper.addEventListener("click", e => {
+navWrapper.addEventListener("click", (e) => {
   if (e.target.id === "nav") {
     navWrapper.classList.remove("show");
     toggleButton.classList.remove("close");

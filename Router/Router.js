@@ -11,13 +11,13 @@ export const router = () => {
     document.querySelector("main").innerHTML = component();
     // For Products (COMPONENT)
     if (component.toString().includes('id="products"')) {
-      component()
+      component();
     }
 
-    // For Shopping (.INNERHTML + HANDLER)
-      if (component.toString().includes('id="shoppingContainer"')) {
-      component()
-      handler()
+    // For Shopping (.InnerHTML + handler)
+    if (component.toString().includes('id="shoppingContainer"')) {
+      component();
+      handler();
     }
   } else {
     document.querySelector("main").innerHTML = notFound();

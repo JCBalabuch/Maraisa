@@ -1,9 +1,13 @@
 import "./Products.css";
-import { gallery, galleryTemplate, toggleFavorite, toggleShopping } from "../../components/Gallery/Gallery";
+import {
+  gallery,
+  galleryTemplate,
+  toggleFavorite,
+  toggleShopping,
+} from "../../components/Gallery/Gallery";
 import { PRODUCTS } from "../../Data/Data";
 
 export const Products = () => {
-
   // Main container
   let main$$ = document.querySelector("main");
 
@@ -30,9 +34,9 @@ const filtersDOM = () => {
   createPriceFilter(container);
   createClearFiltersButton(container);
 
-  // Card Listeners 
+  // Card Listeners
   buttonsAddListeners();
-}
+};
 
 // FILTERS
 
@@ -74,7 +78,7 @@ const createCategoryFilter = (container) => {
 
   // Handler
   categoryFilterSelect.addEventListener("change", () => {
-    filterProducts()
+    filterProducts();
   });
 };
 
@@ -97,7 +101,6 @@ const getUniqueCategories = () => {
   return [...new Set(categories)];
 };
 
-
 // Filter by State
 const createStateFilter = (container) => {
   // Elements
@@ -119,7 +122,7 @@ const createStateFilter = (container) => {
   // Handler
   stateFilterSelect.addEventListener("change", () => {
     filterProducts();
-  })
+  });
 };
 
 const fillStateSelect = (stateSelect) => {
@@ -141,7 +144,6 @@ const getUniqueStates = () => {
   return [...new Set(states)];
 };
 
-
 // Filter by Price
 const createPriceFilter = (container) => {
   // Elements
@@ -156,7 +158,7 @@ const createPriceFilter = (container) => {
   // Handler
   priceFilterInput.addEventListener("input", (e) => {
     filterProducts();
-  })
+  });
 };
 
 // Clear Filters
@@ -171,8 +173,8 @@ const createClearFiltersButton = (container) => {
 
   // Handler
   clearFiltersButton.addEventListener("click", () => {
-    clearFilters()
-  })
+    clearFilters();
+  });
 };
 
 const clearFilters = () => {
@@ -182,7 +184,6 @@ const clearFilters = () => {
   document.getElementById("priceFilter").value = "";
   filterProducts();
 };
-
 
 //FUNCTION: Filter products on search function
 
@@ -210,7 +211,7 @@ const filterProducts = () => {
   productsGallery.appendChild(galleryTemplate(filteredProducts));
 
   //Re-launch Card listeners on filtered products (re-renders)
-  buttonsAddListeners()
+  buttonsAddListeners();
 };
 
 // Card Listeners

@@ -1,13 +1,16 @@
 import "./Favorites.css";
 import { PRODUCTS } from "../../Data/Data";
-import { favGallery } from "../../components/FavGallery/FavGallery";
+import {
+  favGallery,
+  favoritesRemoveButtons,
+} from "../../components/FavGallery/FavGallery";
 
 const favoritesStorage = () => {
   const favoriteGallery = getFavoriteGallery();
   return favoriteGallery;
 };
 
-const getFavoriteGallery = () => {
+export const getFavoriteGallery = () => {
   const favoritesGallery = document.createElement("div");
   favoritesGallery.classList = "favoriteGallery";
 
@@ -36,6 +39,8 @@ const getFavoriteGallery = () => {
 
   favoritesGalleryUl.appendChild(fragment);
   favoritesGallery.appendChild(favoritesGalleryUl);
+
+  favoritesRemoveButtons();
 
   return favoritesGallery;
 };

@@ -1,3 +1,5 @@
+import { getShoppingGallery } from "../../Pages/Shopping/Shopping";
+import { ShoppingHandlers } from "../../Pages/Shopping/ShoppingHandler";
 import "./ShoppingGallery.css";
 
 export const ShpGallery = (product) => {
@@ -70,23 +72,23 @@ export const ShpGallery = (product) => {
   itemShp.appendChild(totalByProductDiv);
   itemShp.appendChild(divBtnsItems);
 
-  removeButtonsAddListeners();
-
   return itemShp;
 };
 
-// Functionality
+// Listeners
 
-export const removeButtonsAddListeners = () => {
+export const shoppingRemoveButtons = () => {
   const removeBtns = document.querySelectorAll(".removeBtnShp");
   removeBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
-      deleteItem(this, "shopping");
+      deleteItemShp(this, "shopping");
     });
   });
 };
 
-export const deleteItem = (element, arrayName) => {
+// Functionality
+
+const deleteItemShp = (element, arrayName) => {
   const cardProduct = element.parentElement.parentElement.id;
   let array = JSON.parse(localStorage.getItem(arrayName)) || [];
 
@@ -94,5 +96,9 @@ export const deleteItem = (element, arrayName) => {
 
   localStorage.setItem(arrayName, JSON.stringify(array));
 
-  ShpGallery(array)
+  const shoppingGallery = document.querySelector(".shoppingGallery");
+  shoppingGallery.innerHTML = "";
+  shoppingGallery.appendChild(getShoppingGallery(array));
+
+  ShoppingHandlers();
 };

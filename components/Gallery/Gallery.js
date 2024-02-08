@@ -78,20 +78,16 @@ export const galleryTemplate = (products) => {
   return productsGallery;
 };
 
-
 export const toggleFavorite = (element) => {
-
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    // Select id Parent Element
   const cardProduct = element.parentElement.parentElement.id;
 
-    // Select button image
-    const favoriteImg = element.querySelector(".favoriteImg")
+  const favoriteImg = element.querySelector(".favoriteImg");
 
   if (favorites.includes(cardProduct)) {
     favorites = favorites.filter((item) => item !== cardProduct); // Remove product from Local Storage
-    favoriteImg.style.filter = "";  // Restore the original color of the button
+    favoriteImg.style.filter = ""; // Restore the original color of the button
   } else {
     favorites.push(cardProduct); // Push product to local storage
     favoriteImg.style.filter = "hue-rotate(180deg)"; // change button color to red
@@ -103,18 +99,16 @@ export const toggleFavorite = (element) => {
 export const toggleShopping = (element) => {
   let shopping = JSON.parse(localStorage.getItem("shopping")) || [];
 
-  // Select id Parent Element
   const cardProduct = element.parentElement.parentElement.id;
 
-  // Select button image
-  const shoppingImg = element.querySelector(".shoppingImg")
+  const shoppingImg = element.querySelector(".shoppingImg");
 
   if (shopping.includes(cardProduct)) {
     shopping = shopping.filter((item) => item !== cardProduct); // Remove product from Local Storage
-    shoppingImg.style.filter = "";  // Restore the original color of the button
+    shoppingImg.style.filter = ""; // Restore the original color of the button
   } else {
     shopping.push(cardProduct); // Push product to local storage
     shoppingImg.style.filter = "hue-rotate(180deg)"; // change button color to red
   }
-  localStorage.setItem("shopping", JSON.stringify(shopping)); 
+  localStorage.setItem("shopping", JSON.stringify(shopping));
 };

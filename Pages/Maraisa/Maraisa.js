@@ -7,5 +7,5 @@ export const Maraisa = () => {
     <video src="/Videos/Maraisa.mp4" controls autoplay preload="auto"></video>
     <h5>${maraisaMean}</h5>
   </div>
-`
+`;
 };

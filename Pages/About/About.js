@@ -1,9 +1,7 @@
 import { about1, about2, about3, maraisa } from "../../Data/Data";
 import "./About.css";
 
-
 const About = () => {
-
   return `
     <div class="about">
       <div class="aboutImg">
