@@ -1,4 +1,4 @@
-import { routes } from "./routes";
+import { routes } from "/routes";
 import notFound from "../Pages/NotFound/NotFound";
 
 export const router = () => {
