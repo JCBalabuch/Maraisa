@@ -33,7 +33,7 @@ export const ShpGallery = (product) => {
   quantityProduct.id = "quantityProduct";
   quantityProduct.classList = "quantityProduct";
   quantityProduct.min = 1;
-  quantityProduct.value = 1;
+  quantityProduct.defaultValue = 1;
 
   const totalByProductDiv = document.createElement("div");
   totalByProductDiv.classList = "priceItemDiv";
@@ -101,4 +101,5 @@ const deleteItemShp = (element, arrayName) => {
   shoppingGallery.appendChild(getShoppingGallery(array));
 
   ShoppingHandlers();
+  shoppingRemoveButtons();
 };

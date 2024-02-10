@@ -3,19 +3,40 @@ export const ShoppingHandlers = () => {
   purchase();
 };
 
-// Quantity input listeners & calc subTotal product price
+
+// const totalShopping = () => {
+//   let itemsShop = document.querySelectorAll("li.itemShp");
+//   itemsShop.forEach((item) =>
+//     item.addEventListener("input", (e) => {
+//       // Price for Item
+//       let idItemShp = e.target.parentElement.id;
+//       calcSubTotalProduct(idItemShp);
+//       // Total Amount
+//       calcTotalAmount();
+//     })
+//   );
+// };
+
 const totalShopping = () => {
   let itemsShop = document.querySelectorAll("li.itemShp");
-  itemsShop.forEach((item) =>
+  itemsShop.forEach((item) => {
     item.addEventListener("input", (e) => {
-      // Price for Item
-      let idItemShp = e.target.parentElement.id;
-      calcSubTotalProduct(idItemShp);
-      // Total Amount
-      calcTotalAmount();
-    })
-  );
+      handleInputChange(e);
+    });
+    
+    // Call handleInputChange for default input value
+    handleInputChange({ target: item.querySelector("input") });
+  });
 };
+
+const handleInputChange = (e) => {
+  // Price for Item
+  let idItemShp = e.target.parentElement.id;
+  calcSubTotalProduct(idItemShp);
+  // Total Amount
+  calcTotalAmount();
+};
+
 
 // Function calc subTotal product price
 const calcSubTotalProduct = (id) => {
