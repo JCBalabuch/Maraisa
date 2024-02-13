@@ -1,8 +1,3 @@
-.productsGallery {
-  width: 100%;
-  height: 100%;
-}
-
 .ulProductsGallery {
   width: 100%;
   height: 100%;
@@ -10,12 +5,13 @@
   gap: var(--mtv-gap-m);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .cardProduct {
-  width: auto;
-  max-width: 300px;
+  width: 100%;
+  min-width: 250px;
   height: 100%;
   display: flex;
   flex-direction: column;

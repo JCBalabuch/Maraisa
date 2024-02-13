@@ -57,4 +57,5 @@ const Footer = () => {
 const footer = document.querySelector("footer");
 footer.appendChild(Footer());
 
+
 export default Footer;

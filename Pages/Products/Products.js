@@ -1,6 +1,5 @@
 import "./Products.css";
 import {
-  gallery,
   galleryTemplate,
   toggleFavorite,
   toggleShopping,
@@ -15,7 +14,7 @@ export const Products = () => {
   let productsTemplate = `
     <section id="products" class="products">
         <div id="productsFilter" class="productsFilter filters"></div>
-        <div id="productsGallery" class="productsGallery">${gallery()}</div>
+        <div id="productsGallery" class="productsGallery">${galleryTemplate(PRODUCTS).outerHTML}</div>
     </section>
  `;
 
@@ -151,6 +150,7 @@ const createPriceFilter = (container) => {
   priceFilterInput.type = "number";
   priceFilterInput.id = "priceFilter";
   priceFilterInput.placeholder = "Precio máximo $";
+  priceFilterInput.min = 1;
 
   // Append
   container.appendChild(priceFilterInput);
@@ -207,11 +207,20 @@ const filterProducts = () => {
     );
   });
 
-  //Append
-  productsGallery.appendChild(galleryTemplate(filteredProducts));
-
-  //Re-launch Card listeners on filtered products (re-renders)
-  buttonsAddListeners();
+  // Check if there are filtered products
+  if (filteredProducts.length === 0) {
+    const message = document.createElement("p");
+    message.classList = "message";
+    message.textContent =
+      "Disculpa, pero no tenemos productos con las características que buscas";
+    productsGallery.appendChild(message);
+  } else {
+    //Append
+    productsGallery.appendChild(galleryTemplate(filteredProducts));
+  
+    //Re-launch Card listeners on filtered products (re-renders)
+    buttonsAddListeners();
+  }
 };
 
 // Card Listeners

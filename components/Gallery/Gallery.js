@@ -1,24 +1,14 @@
-import { PRODUCTS } from "../../Data/Data";
 import "./Gallery.css";
 
-export const gallery = () => {
-  return `
-      <div id="gallery" class="gallery">
-        ${galleryTemplate(PRODUCTS).outerHTML}
-      </div>
-        `;
-};
 
 export const galleryTemplate = (products) => {
-  const productsGallery = document.createElement("div");
-  productsGallery.id = "productsGallery";
-  productsGallery.classList = "productsGallery";
 
   const ulProductsGallery = document.createElement("ul");
   ulProductsGallery.classList = "ulProductsGallery";
 
   products.forEach((product) => {
     const liProduct = document.createElement("li");
+    liProduct.classList = "liProduct";
 
     const cardProduct = document.createElement("div");
     cardProduct.id = `${product.id}`;
@@ -74,8 +64,8 @@ export const galleryTemplate = (products) => {
     liProduct.appendChild(cardProduct);
     ulProductsGallery.appendChild(liProduct);
   });
-  productsGallery.appendChild(ulProductsGallery);
-  return productsGallery;
+  return ulProductsGallery;
+
 };
 
 export const toggleFavorite = (element) => {

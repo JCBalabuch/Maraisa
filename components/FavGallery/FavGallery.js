@@ -1,4 +1,4 @@
-// import { getFavoriteGallery } from "../../Pages/Favorites/Favorites";
+import { getFavoriteGallery } from "../../Pages/Favorites/Favorites";
 import "./FavGallery.css";
 
 export const favGallery = (product) => {
@@ -50,7 +50,6 @@ export const favoritesRemoveButtons = () => {
   removeBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
       deleteItemFav(this, "favorites");
-      console.log(btn);
     });
   });
 };
@@ -59,7 +58,7 @@ export const favoritesRemoveButtons = () => {
 
 const deleteItemFav = (element, arrayName) => {
   const cardProduct = element.parentElement.parentElement.id;
-  console.log(cardProduct);
+
   let array = JSON.parse(localStorage.getItem(arrayName)) || [];
 
   array = array.filter((item) => item !== cardProduct);

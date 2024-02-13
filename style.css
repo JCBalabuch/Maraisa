@@ -94,7 +94,6 @@ header {
 
 main {
   width: 100%;
-  /* height: 75svh; */
   min-height: 75svh;
   display: flex;
   flex-direction: column;
@@ -197,5 +196,3 @@ button:hover {
 .app {
   width: 100%;
 }
-
-

@@ -4,19 +4,6 @@ export const ShoppingHandlers = () => {
 };
 
 
-// const totalShopping = () => {
-//   let itemsShop = document.querySelectorAll("li.itemShp");
-//   itemsShop.forEach((item) =>
-//     item.addEventListener("input", (e) => {
-//       // Price for Item
-//       let idItemShp = e.target.parentElement.id;
-//       calcSubTotalProduct(idItemShp);
-//       // Total Amount
-//       calcTotalAmount();
-//     })
-//   );
-// };
-
 const totalShopping = () => {
   let itemsShop = document.querySelectorAll("li.itemShp");
   itemsShop.forEach((item) => {
@@ -79,7 +66,7 @@ const purchase = () => {
 
     // Purchase Message
     const purchaseMessage = document.createElement("p");
-    purchaseMessage.classList = "purchaseMessage";
+    purchaseMessage.classList = "message";
     purchaseMessage.textContent =
       "¡Gracias por llevarte un pedacito de Venezuela a tu casa!";
     shoppingContainer.appendChild(purchaseMessage);
