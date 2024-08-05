@@ -15,7 +15,6 @@
   justify-content: center;
   align-items: center;
   margin-top: var(--mtv-margin-s);
-  border: 2px solid blue;
 }
 
 .filters {
